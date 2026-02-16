@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>About Us – Manzi Tours&Travels</title>
+  <meta name="description" content="Learn about Manzi Tours&Travels: our story, values, and commitment to responsible travel.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Outfit', 'system-ui', 'sans-serif'], display: ['Fraunces', 'Georgia', 'serif'] } } } };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .font-display { font-family: 'Fraunces', Georgia, serif; }
+    .font-sans { font-family: 'Outfit', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="font-sans text-stone-700 antialiased">
+  <div id="header-placeholder">
+    <div class="h-16 md:h-20 bg-white border-b flex items-center justify-center"><span class="text-stone-400">Loading…</span></div>
+  </div>
+
+  <main>
+    <!-- Page hero -->
+    <section class="relative py-20 md:py-28 bg-stone-900 pt-24 md:pt-32 overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=80')] bg-cover bg-center opacity-40"></div>
+      <div class="absolute inset-0 bg-stone-900/70"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-amber-400 font-medium tracking-widest uppercase text-sm">Our Story</p>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">About Us</h1>
+        <p class="mt-4 text-lg text-stone-300 max-w-2xl mx-auto">We craft journeys you’ll remember—with care for people and places.</p>
+      </div>
+    </section>
+
+    <!-- About content -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <p class="text-amber-600 font-semibold uppercase tracking-wider text-sm">Who we are</p>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-stone-900 mt-2">We Craft Journeys You’ll Remember</h2>
+            <p class="mt-6 text-stone-600 leading-relaxed">
+              Manzi Tours&Travels was born from a passion for exploration and a commitment to responsible travel. We partner with local guides and communities to deliver authentic, sustainable experiences—whether you’re on safari, at the beach, or on a cultural trail.
+            </p>
+            <p class="mt-4 text-stone-600 leading-relaxed">
+              Our team has spent years on the ground, building relationships and designing itineraries that respect both the environment and the people who call these places home. Every trip we offer is vetted for quality, safety, and impact.
+            </p>
+            <ul class="mt-8 space-y-3">
+              <li class="flex items-center gap-3 text-stone-700"><span class="text-amber-500">✓</span> Expert local guides</li>
+              <li class="flex items-center gap-3 text-stone-700"><span class="text-amber-500">✓</span> Small groups & private options</li>
+              <li class="flex items-center gap-3 text-stone-700"><span class="text-amber-500">✓</span> Sustainable & community-focused</li>
+              <li class="flex items-center gap-3 text-stone-700"><span class="text-amber-500">✓</span> 24/7 support on every trip</li>
+            </ul>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:min-h-[400px]">
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" alt="Travel experience" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/40 to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="py-16 md:py-24 bg-stone-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p class="text-amber-600 font-semibold uppercase tracking-wider text-sm">Our values</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-stone-900 mt-2">What We Stand For</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center p-6 rounded-2xl bg-white border border-stone-200 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mx-auto text-xl font-bold">1</div>
+            <h3 class="font-display text-xl font-bold text-stone-900 mt-4">Authenticity</h3>
+            <p class="mt-2 text-stone-600 text-sm">Real encounters with people and places—no staged experiences.</p>
+          </div>
+          <div class="text-center p-6 rounded-2xl bg-white border border-stone-200 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mx-auto text-xl font-bold">2</div>
+            <h3 class="font-display text-xl font-bold text-stone-900 mt-4">Sustainability</h3>
+            <p class="mt-2 text-stone-600 text-sm">We minimize impact and support conservation and local economies.</p>
+          </div>
+          <div class="text-center p-6 rounded-2xl bg-white border border-stone-200 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mx-auto text-xl font-bold">3</div>
+            <h3 class="font-display text-xl font-bold text-stone-900 mt-4">Care</h3>
+            <p class="mt-2 text-stone-600 text-sm">From booking to return, we’re with you every step of the way.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 md:py-24 bg-stone-900 text-stone-300">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white">Ready to explore with us?</h2>
+        <p class="mt-4 text-stone-400">Tell us your dream trip—we’ll make it happen.</p>
+        <a href="contact.html" class="mt-8 inline-flex items-center justify-center px-8 py-4 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors">Get in touch</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder">
+    <div class="h-24 bg-stone-200 flex items-center justify-center"><span class="text-stone-500">Loading…</span></div>
+  </div>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="js/load-components.js"></script>
+</body>
+</html>

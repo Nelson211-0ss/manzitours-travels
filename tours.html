@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>Tours – Manzi Tours&Travels</title>
+  <meta name="description" content="Browse our curated tours: safari, coastal, heritage, and custom itineraries with Manzi Tours&Travels.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Outfit', 'system-ui', 'sans-serif'], display: ['Fraunces', 'Georgia', 'serif'] } } } };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .font-display { font-family: 'Fraunces', Georgia, serif; }
+    .font-sans { font-family: 'Outfit', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="font-sans text-stone-700 antialiased">
+  <div id="header-placeholder">
+    <div class="h-16 md:h-20 bg-white border-b flex items-center justify-center"><span class="text-stone-400">Loading…</span></div>
+  </div>
+
+  <main>
+    <!-- Page hero -->
+    <section class="relative py-20 md:py-28 bg-stone-900 pt-24 md:pt-32 overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&q=80')] bg-cover bg-center opacity-40"></div>
+      <div class="absolute inset-0 bg-stone-900/70"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-amber-400 font-medium tracking-widest uppercase text-sm">Adventures</p>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">Our Tours</h1>
+        <p class="mt-4 text-lg text-stone-300 max-w-2xl mx-auto">Join our best-selling tours designed for comfort, discovery, and lasting memories.</p>
+      </div>
+    </section>
+
+    <!-- Tours listing -->
+    <section class="py-16 md:py-24 bg-stone-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="rounded-2xl border border-stone-200 overflow-hidden bg-white hover:border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[5/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80" alt="Classic Safari" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">5 Days</span>
+              <h2 class="font-display text-xl font-bold text-stone-900 mt-1">Classic Safari</h2>
+              <p class="mt-2 text-stone-600 text-sm">Game drives, luxury lodges, and sundowners on the plains.</p>
+              <p class="mt-4 font-semibold text-amber-600">From $1,299 <span class="text-stone-400 font-normal text-sm">/ person</span></p>
+              <a href="contact.html" class="mt-4 inline-block text-amber-600 font-semibold hover:text-amber-700">Book this tour →</a>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-stone-200 overflow-hidden bg-white hover:border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[5/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80" alt="Coastal Escape" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">7 Days</span>
+              <h2 class="font-display text-xl font-bold text-stone-900 mt-1">Coastal Escape</h2>
+              <p class="mt-2 text-stone-600 text-sm">Beach resorts, snorkeling, and island-hopping adventures.</p>
+              <p class="mt-4 font-semibold text-amber-600">From $899 <span class="text-stone-400 font-normal text-sm">/ person</span></p>
+              <a href="contact.html" class="mt-4 inline-block text-amber-600 font-semibold hover:text-amber-700">Book this tour →</a>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-stone-200 overflow-hidden bg-white hover:border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[5/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80" alt="Heritage Trail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">4 Days</span>
+              <h2 class="font-display text-xl font-bold text-stone-900 mt-1">Heritage Trail</h2>
+              <p class="mt-2 text-stone-600 text-sm">Museums, villages, and authentic local encounters.</p>
+              <p class="mt-4 font-semibold text-amber-600">From $649 <span class="text-stone-400 font-normal text-sm">/ person</span></p>
+              <a href="contact.html" class="mt-4 inline-block text-amber-600 font-semibold hover:text-amber-700">Book this tour →</a>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-stone-200 overflow-hidden bg-white hover:border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[5/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80" alt="Highland Trek" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">6 Days</span>
+              <h2 class="font-display text-xl font-bold text-stone-900 mt-1">Highland Trek</h2>
+              <p class="mt-2 text-stone-600 text-sm">Scenic hikes, mountain lodges, and breathtaking views.</p>
+              <p class="mt-4 font-semibold text-amber-600">From $1,099 <span class="text-stone-400 font-normal text-sm">/ person</span></p>
+              <a href="contact.html" class="mt-4 inline-block text-amber-600 font-semibold hover:text-amber-700">Book this tour →</a>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-stone-200 overflow-hidden bg-white hover:border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[5/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800&q=80" alt="Family Adventure" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">5 Days</span>
+              <h2 class="font-display text-xl font-bold text-stone-900 mt-1">Family Adventure</h2>
+              <p class="mt-2 text-stone-600 text-sm">Kid-friendly activities, wildlife, and beach time for all ages.</p>
+              <p class="mt-4 font-semibold text-amber-600">From $949 <span class="text-stone-400 font-normal text-sm">/ person</span></p>
+              <a href="contact.html" class="mt-4 inline-block text-amber-600 font-semibold hover:text-amber-700">Book this tour →</a>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-stone-200 overflow-hidden bg-white hover:border-amber-200 hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1">
+            <div class="aspect-[5/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80" alt="Custom itinerary" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">Your choice</span>
+              <h2 class="font-display text-xl font-bold text-stone-900 mt-1">Custom Itinerary</h2>
+              <p class="mt-2 text-stone-600 text-sm">We design a trip around your dates, interests, and budget.</p>
+              <p class="mt-4 font-semibold text-amber-600">Quote on request</p>
+              <a href="contact.html" class="mt-4 inline-block text-amber-600 font-semibold hover:text-amber-700">Request a quote →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder">
+    <div class="h-24 bg-stone-200 flex items-center justify-center"><span class="text-stone-500">Loading…</span></div>
+  </div>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="js/load-components.js"></script>
+</body>
+</html>

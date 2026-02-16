@@ -1,0 +1,66 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-sm transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="text-2xl font-bold tracking-tight text-stone-800 group-hover:text-amber-600 transition-colors">
+          Manzi <span class="text-amber-600">Tours&amp;Travels</span>
+        </span>
+      </a>
+
+      <!-- Desktop navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-stone-600 hover:text-amber-600 font-medium transition-colors">Home</a>
+        <!-- Services dropdown -->
+        <div class="relative group" id="services-dropdown">
+          <button type="button" class="flex items-center gap-1 text-stone-600 hover:text-amber-600 font-medium transition-colors focus:outline-none focus:text-amber-600" aria-expanded="false" aria-haspopup="true" id="services-dropdown-btn">
+            Services
+            <i data-feather="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+          </button>
+          <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200" id="services-dropdown-panel">
+            <div class="min-w-[220px] rounded-xl border border-stone-200 bg-white py-2 shadow-xl">
+              <a href="visa-assistance.html" class="block px-4 py-2.5 text-stone-600 hover:bg-amber-50 hover:text-amber-600 font-medium transition-colors">Visa assistance</a>
+              <a href="flight-booking.html" class="block px-4 py-2.5 text-stone-600 hover:bg-amber-50 hover:text-amber-600 font-medium transition-colors">Flight booking</a>
+              <a href="hotel-assistance.html" class="block px-4 py-2.5 text-stone-600 hover:bg-amber-50 hover:text-amber-600 font-medium transition-colors">Hotel assistance</a>
+              <a href="tailored-tours.html" class="block px-4 py-2.5 text-stone-600 hover:bg-amber-50 hover:text-amber-600 font-medium transition-colors">Tailored tours</a>
+              <a href="guided-destinations.html" class="block px-4 py-2.5 text-stone-600 hover:bg-amber-50 hover:text-amber-600 font-medium transition-colors">Guided destinations</a>
+            </div>
+          </div>
+        </div>
+        <a href="destinations.html" class="text-stone-600 hover:text-amber-600 font-medium transition-colors">Destinations</a>
+        <a href="tours.html" class="text-stone-600 hover:text-amber-600 font-medium transition-colors">Tours</a>
+        <a href="about.html" class="text-stone-600 hover:text-amber-600 font-medium transition-colors">About</a>
+        <a href="contact.html" class="text-stone-600 hover:text-amber-600 font-medium transition-colors">Contact</a>
+        <a href="contact.html" class="inline-flex items-center px-5 py-2.5 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors shadow-md hover:shadow-lg">
+          Book Now
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button type="button" id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-stone-600 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Toggle menu">
+        <i data-feather="menu" class="w-6 h-6" id="menu-icon-open"></i>
+        <i data-feather="x" class="w-6 h-6 hidden" id="menu-icon-close"></i>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-stone-200">
+      <div class="flex flex-col gap-0 pt-4">
+        <a href="index.html" class="px-4 py-3 text-stone-600 hover:bg-amber-50 hover:text-amber-600 rounded-lg font-medium">Home</a>
+        <p class="px-4 pt-3 pb-1 text-xs font-semibold text-stone-400 uppercase tracking-wider">Services</p>
+        <a href="visa-assistance.html" class="px-4 py-2 pl-8 text-stone-600 hover:bg-amber-50 hover:text-amber-600 rounded-lg font-medium">Visa assistance</a>
+        <a href="flight-booking.html" class="px-4 py-2 pl-8 text-stone-600 hover:bg-amber-50 hover:text-amber-600 rounded-lg font-medium">Flight booking</a>
+        <a href="hotel-assistance.html" class="px-4 py-2 pl-8 text-stone-600 hover:bg-amber-50 hover:text-amber-600 rounded-lg font-medium">Hotel assistance</a>
+        <a href="tailored-tours.html" class="px-4 py-2 pl-8 text-stone-600 hover:bg-amber-50 hover:text-amber-600 rounded-lg font-medium">Tailored tours</a>
+        <a href="guided-destinations.html" class="px-4 py-2 pl-8 text-stone-600 hover:bg-amber-50 hover:text-amber-600 rounded-lg font-medium">Guided destinations</a>
+        <a href="destinations.html" class="px-4 py-3 text-stone-600 hover:bg-amber-50 hover:text-amber-600 rounded-lg font-medium">Destinations</a>
+        <a href="tours.html" class="px-4 py-3 text-stone-600 hover:bg-amber-50 hover:text-amber-600 rounded-lg font-medium">Tours</a>
+        <a href="about.html" class="px-4 py-3 text-stone-600 hover:bg-amber-50 hover:text-amber-600 rounded-lg font-medium">About</a>
+        <a href="contact.html" class="px-4 py-3 text-stone-600 hover:bg-amber-50 hover:text-amber-600 rounded-lg font-medium">Contact</a>
+        <a href="contact.html" class="mx-4 mt-2 inline-flex justify-center items-center px-5 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600">
+          Book Now
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
