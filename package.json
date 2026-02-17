@@ -1,0 +1,9 @@
+{
+  "name": "manzitours-travels",
+  "version": "1.0.0",
+  "description": "Honzi Tours & Travel – static site server",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}
