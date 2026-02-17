@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>Tailored Tours Request – Honzi Tours &amp; Travel</title>
+  <meta name="description" content="Submit your tailored tour request. We'll design a custom itinerary around your dates and interests.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Google Sans Flex', 'system-ui', 'sans-serif'], display: ['Fraunces', 'Georgia', 'serif'] }, colors: { gold: { DEFAULT: '#C1A061', light: '#C6B289', dark: '#A68B4B' } } } } };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Google+Sans+Flex:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    .font-display { font-family: 'Fraunces', Georgia, serif; }
+    .font-sans { font-family: 'Google Sans Flex', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="font-sans text-gold-light antialiased bg-black">
+  <div id="header-placeholder">
+    <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
+  </div>
+
+  <main class="relative min-h-[calc(100vh-12rem)] py-16 md:py-24 overflow-hidden">
+    <!-- Background image: travel / adventure -->
+    <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80');"></div>
+    <div class="absolute inset-0 z-0 bg-black/70"></div>
+
+    <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="font-display text-3xl md:text-4xl font-bold text-white">Tailored Tours Request</h1>
+        <p class="mt-2 text-gold-light">Fill out the form below and we'll send your details to our team via WhatsApp</p>
+      </div>
+
+      <form id="tailored-form-el" class="rounded-2xl border border-gold/30 bg-black/60 backdrop-blur-sm p-6 md:p-8 shadow-xl">
+        <div class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gold mb-1">Name <span class="text-red-400">*</span></label>
+            <input type="text" id="name" name="name" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="Your full name">
+          </div>
+
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gold mb-1">Phone Number <span class="text-red-400">*</span></label>
+            <input type="tel" id="phone" name="phone" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="+971 55 135 2382">
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gold mb-1">Email Address <span class="text-red-400">*</span></label>
+            <input type="email" id="email" name="email" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="you@example.com">
+          </div>
+
+          <div>
+            <label for="country" class="block text-sm font-medium text-gold mb-1">Country <span class="text-red-400">*</span></label>
+            <select id="country" name="country" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition appearance-none cursor-pointer" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22%23C6B289%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 1.25rem; padding-right: 2.5rem;">
+              <option value="">Select your country</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="experience" class="block text-sm font-medium text-gold mb-1">Tailored Experience</label>
+            <select id="experience" name="experience" class="w-full rounded-lg border border-gold/30 bg-black/30 text-white px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition appearance-none cursor-pointer" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22%23C6B289%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 1.25rem; padding-right: 2.5rem;">
+              <option value="">Select tailored experience</option>
+              <option value="Honey Moon">1. Honey Moon</option>
+              <option value="Anniversaries">2. Anniversaries</option>
+              <option value="Family Tour">3. Family Tour</option>
+              <option value="Groups (friends, work, etc)">4. Groups (friends, work, etc)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="people" class="block text-sm font-medium text-gold mb-1">Number of People</label>
+            <input type="number" id="people" name="people" min="1" class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="e.g. 2">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gold mb-2">Require Airport Pickup and Drop</label>
+            <div class="flex gap-6">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="airportPickup" value="YES" class="w-4 h-4 text-gold border-gold/50 bg-black focus:ring-gold">
+                <span class="text-gold-light">YES</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="radio" name="airportPickup" value="NO" checked class="w-4 h-4 text-gold border-gold/50 bg-black focus:ring-gold">
+                <span class="text-gold-light">NO</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <button type="submit" id="submit-btn" class="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white transition-colors">
+            <i data-feather="send" class="w-5 h-5"></i>
+            Submit Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div id="footer-placeholder">
+    <div class="h-24 bg-black border-t border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
+  </div>
+
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="js/load-components.js"></script>
+  <script src="js/countries.js"></script>
+  <script>
+    (function() {
+      var WHATSAPP_NUMBER = '971551352382';
+
+      function populateCountries() {
+        var select = document.getElementById('country');
+        if (!select) return;
+        COUNTRIES.forEach(function(c) {
+          var opt = document.createElement('option');
+          opt.value = c;
+          opt.textContent = c;
+          select.appendChild(opt);
+        });
+      }
+
+      function getFormData() {
+        var form = document.getElementById('tailored-form-el');
+        var fd = new FormData(form);
+        var airportPickup = form.querySelector('input[name="airportPickup"]:checked');
+        return {
+          name: fd.get('name') || '',
+          phone: fd.get('phone') || '',
+          email: fd.get('email') || '',
+          country: fd.get('country') || '',
+          experience: fd.get('experience') || '',
+          people: fd.get('people') || '',
+          airportPickup: airportPickup ? airportPickup.value : 'NO'
+        };
+      }
+
+      function formatMessage(data) {
+        return [
+          '*Tailored Tours Request*',
+          '',
+          'Name: ' + data.name,
+          'Phone: ' + data.phone,
+          'Email: ' + data.email,
+          'Country: ' + data.country,
+          'Tailored Experience: ' + data.experience,
+          'Number of People: ' + data.people,
+          'Airport Pickup & Drop: ' + data.airportPickup
+        ].join('\n');
+      }
+
+      function generatePDF(data) {
+        var jsPDF = window.jspdf.jsPDF;
+        var doc = new jsPDF();
+        var y = 20;
+
+        doc.setFontSize(18);
+        doc.setTextColor(193, 160, 97);
+        doc.text('Tailored Tours Request', 20, y);
+        y += 15;
+
+        doc.setFontSize(11);
+        doc.setTextColor(80, 80, 80);
+        var lines = [
+          ['Name:', data.name],
+          ['Phone Number:', data.phone],
+          ['Email Address:', data.email],
+          ['Country:', data.country],
+          ['Tailored Experience:', data.experience],
+          ['Number of People:', data.people],
+          ['Airport Pickup & Drop:', data.airportPickup]
+        ];
+        lines.forEach(function(line) {
+          doc.setFont(undefined, 'bold');
+          doc.text(line[0], 20, y);
+          doc.setFont(undefined, 'normal');
+          doc.text(line[1] || '-', 70, y);
+          y += 8;
+        });
+
+        return doc;
+      }
+
+      document.getElementById('tailored-form-el').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = document.getElementById('submit-btn');
+        btn.disabled = true;
+        btn.innerHTML = '<span class="animate-pulse">Processing…</span>';
+
+        var data = getFormData();
+
+        try {
+          var doc = generatePDF(data);
+          var pdfBlob = doc.output('blob');
+          var fileName = 'Tailored-Tours-Request-' + (data.name || 'form').replace(/\s+/g, '-') + '.pdf';
+          var pdfFile = new File([pdfBlob], fileName, { type: 'application/pdf' });
+          var msg = formatMessage(data);
+
+          if (navigator.share && navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
+            navigator.share({
+              title: 'Tailored Tours Request',
+              text: msg + '\n\nSend to: +971 55 135 2382',
+              files: [pdfFile]
+            }).then(function() {
+              window.open('https://wa.me/' + WHATSAPP_NUMBER, '_blank');
+            }).catch(function() {
+              fallbackSend(pdfBlob, fileName, msg);
+            }).finally(function() {
+              resetBtn(btn);
+            });
+          } else {
+            fallbackSend(pdfBlob, fileName, msg);
+            resetBtn(btn);
+          }
+        } catch (err) {
+          console.error('Error:', err);
+          resetBtn(btn);
+        }
+
+        function fallbackSend(blob, name, text) {
+          var a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = name;
+          a.click();
+          URL.revokeObjectURL(a.href);
+          var waMsg = encodeURIComponent(text + '\n\n📎 Your PDF has been downloaded. Please attach it to this chat.');
+          window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + waMsg, '_blank');
+        }
+
+        function resetBtn(b) {
+          b.disabled = false;
+          b.innerHTML = '<i data-feather="send" class="w-5 h-5"></i> Submit Request';
+          if (window.feather) window.feather.replace();
+        }
+      });
+
+      populateCountries();
+    })();
+  </script>
+</body>
+</html>

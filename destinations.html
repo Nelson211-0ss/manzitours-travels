@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <title>Destinations – Manzi Tours&Travels</title>
-  <meta name="description" content="Explore our handpicked destinations: safari, beaches, and cultural experiences with Manzi Tours&Travels.">
+  <title>Destinations – Honzi Tours & Travel</title>
+  <meta name="description" content="Explore our handpicked destinations: safari, beaches, and cultural experiences with Honzi Tours & Travel.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Google Sans Flex', 'system-ui', 'sans-serif'], display: ['Fraunces', 'Georgia', 'serif'] } } } };
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Google Sans Flex', 'system-ui', 'sans-serif'], display: ['Fraunces', 'Georgia', 'serif'] }, colors: { gold: { DEFAULT: '#C1A061', light: '#C6B289', dark: '#A68B4B' } } } } };
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,90 +18,90 @@
     .font-sans { font-family: 'Google Sans Flex', system-ui, sans-serif; }
   </style>
 </head>
-<body class="font-sans text-stone-700 antialiased">
+<body class="font-sans text-gold-light antialiased bg-black">
   <div id="header-placeholder">
-    <div class="h-16 md:h-20 bg-white border-b flex items-center justify-center"><span class="text-stone-400">Loading…</span></div>
+    <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
 
   <main>
     <!-- Page hero -->
-    <section class="relative py-20 md:py-28 bg-stone-900 pt-24 md:pt-32 overflow-hidden">
+    <section class="relative py-20 md:py-28 bg-black pt-24 md:pt-32 overflow-hidden">
       <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80')] bg-cover bg-center opacity-40"></div>
-      <div class="absolute inset-0 bg-stone-900/70"></div>
+      <div class="absolute inset-0 bg-black/70"></div>
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-amber-400 font-medium tracking-widest uppercase text-sm">Explore</p>
+        <p class="text-gold font-medium tracking-widest uppercase text-sm">Explore</p>
         <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">Our Destinations</h1>
-        <p class="mt-4 text-lg text-stone-300 max-w-2xl mx-auto">From savannahs to coastlines and cultural gems—handpicked experiences for every traveler.</p>
+        <p class="mt-4 text-lg text-gold-light max-w-2xl mx-auto">From savannahs to coastlines and cultural gems—handpicked experiences for every traveler.</p>
       </div>
     </section>
 
     <!-- Destinations grid -->
-    <section class="py-16 md:py-24 bg-stone-50">
+    <section class="py-16 md:py-24 bg-neutral-950">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <article class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 aspect-[4/3]">
             <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80" alt="Safari adventure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/30 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h2 class="font-display text-xl font-bold">Safari & Wildlife</h2>
-              <p class="mt-1 text-stone-300 text-sm">Witness the great migration and iconic wildlife in their natural habitat.</p>
-              <a href="tours.html" class="mt-4 inline-block text-amber-400 font-semibold hover:text-amber-300 transition-colors">View tours →</a>
+              <p class="mt-1 text-gold-light text-sm">Witness the great migration and iconic wildlife in their natural habitat.</p>
+              <a href="tours.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light transition-colors">View tours →</a>
             </div>
           </article>
           <article class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 aspect-[4/3]">
             <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Beach getaway" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/30 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h2 class="font-display text-xl font-bold">Beach Getaways</h2>
-              <p class="mt-1 text-stone-300 text-sm">Pristine shores, turquoise waters, and endless relaxation.</p>
-              <a href="tours.html" class="mt-4 inline-block text-amber-400 font-semibold hover:text-amber-300 transition-colors">View tours →</a>
+              <p class="mt-1 text-gold-light text-sm">Pristine shores, turquoise waters, and endless relaxation.</p>
+              <a href="tours.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light transition-colors">View tours →</a>
             </div>
           </article>
           <article class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 aspect-[4/3] sm:col-span-2 lg:col-span-1">
             <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800&q=80" alt="Cultural experience" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/30 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h2 class="font-display text-xl font-bold">Cultural Experiences</h2>
-              <p class="mt-1 text-stone-300 text-sm">Connect with local traditions, crafts, and communities.</p>
-              <a href="tours.html" class="mt-4 inline-block text-amber-400 font-semibold hover:text-amber-300 transition-colors">View tours →</a>
+              <p class="mt-1 text-gold-light text-sm">Connect with local traditions, crafts, and communities.</p>
+              <a href="tours.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light transition-colors">View tours →</a>
             </div>
           </article>
         </div>
 
         <!-- More destinations -->
         <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <article class="rounded-2xl border border-stone-200 overflow-hidden bg-white hover:shadow-xl transition-shadow">
+          <article class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:shadow-xl transition-shadow">
             <div class="aspect-[16/10] overflow-hidden">
               <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=80" alt="Mountain escapes" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
             </div>
             <div class="p-6">
-              <h2 class="font-display text-xl font-bold text-stone-900">Mountain Escapes</h2>
-              <p class="mt-2 text-stone-600 text-sm">Trekking, scenic drives, and highland lodges for nature lovers.</p>
-              <a href="contact.html" class="mt-4 inline-block text-amber-600 font-semibold hover:text-amber-700">Inquire →</a>
+              <h2 class="font-display text-xl font-bold text-white">Mountain Escapes</h2>
+              <p class="mt-2 text-gold-light text-sm">Trekking, scenic drives, and highland lodges for nature lovers.</p>
+              <a href="contact.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light">Inquire →</a>
             </div>
           </article>
-          <article class="rounded-2xl border border-stone-200 overflow-hidden bg-white hover:shadow-xl transition-shadow">
+          <article class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:shadow-xl transition-shadow">
             <div class="aspect-[16/10] overflow-hidden">
               <img src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=800&q=80" alt="City breaks" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
             </div>
             <div class="p-6">
-              <h2 class="font-display text-xl font-bold text-stone-900">City Breaks</h2>
-              <p class="mt-2 text-stone-600 text-sm">Markets, museums, and urban adventures in vibrant cities.</p>
-              <a href="contact.html" class="mt-4 inline-block text-amber-600 font-semibold hover:text-amber-700">Inquire →</a>
+              <h2 class="font-display text-xl font-bold text-white">City Breaks</h2>
+              <p class="mt-2 text-gold-light text-sm">Markets, museums, and urban adventures in vibrant cities.</p>
+              <a href="contact.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light">Inquire →</a>
             </div>
           </article>
         </div>
 
         <div class="mt-16 text-center">
-          <p class="text-stone-600">Want a custom itinerary? We’ll design a trip around your interests.</p>
-          <a href="contact.html" class="mt-4 inline-flex items-center justify-center px-6 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors">Get in touch</a>
+          <p class="text-gold-light">Want a custom itinerary? We’ll design a trip around your interests.</p>
+          <a href="contact.html" class="mt-4 inline-flex items-center justify-center px-6 py-3 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white transition-colors">Get in touch</a>
         </div>
       </div>
     </section>
   </main>
 
   <div id="footer-placeholder">
-    <div class="h-24 bg-stone-200 flex items-center justify-center"><span class="text-stone-500">Loading…</span></div>
+    <div class="h-24 bg-black border-t border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="js/load-components.js"></script>

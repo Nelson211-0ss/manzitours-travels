@@ -1,4 +1,4 @@
-# Manzi Tours&Travels
+# Honzi Tours & Travel
 
 A modern, mobile-responsive tour and travel website built with HTML and Tailwind CSS.
 
@@ -32,7 +32,7 @@ Use the “Live Server” extension and “Open with Live Server” on `index.ht
 ## Structure
 
 ```
-ManziTours&Travels/
+HonziTours&Travel/
 ├── index.html           # Home page
 ├── destinations.html    # Destinations (safari, beach, cultural, mountain, city)
 ├── tours.html           # All tours (safari, coastal, heritage, highland, family, custom)

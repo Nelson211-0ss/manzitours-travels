@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <title>Visa Assistance – Manzi Tours&Travels</title>
-  <meta name="description" content="We guide you through visa requirements and paperwork for your destination. Stress-free visa support with Manzi Tours&Travels.">
+  <title>Visa Assistance – Honzi Tours &amp; Travel</title>
+  <meta name="description" content="We guide you through visa requirements and paperwork for your destination. Stress-free visa support with Honzi Tours and Travels.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Google Sans Flex', 'system-ui', 'sans-serif'], display: ['Fraunces', 'Georgia', 'serif'] } } } };
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Google Sans Flex', 'system-ui', 'sans-serif'], display: ['Fraunces', 'Georgia', 'serif'] }, colors: { gold: { DEFAULT: '#C1A061', light: '#C6B289', dark: '#A68B4B' } } } } };
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,46 +18,47 @@
     .font-sans { font-family: 'Google Sans Flex', system-ui, sans-serif; }
   </style>
 </head>
-<body class="font-sans text-stone-700 antialiased">
+<body class="font-sans text-gold-light antialiased bg-black">
   <div id="header-placeholder">
-    <div class="h-16 md:h-20 bg-white border-b flex items-center justify-center"><span class="text-stone-400">Loading…</span></div>
+    <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
 
   <main>
-    <section class="relative py-20 md:py-28 bg-stone-900 pt-24 md:pt-32 overflow-hidden">
+    <section class="relative py-20 md:py-28 bg-black pt-24 md:pt-32 overflow-hidden">
       <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')] bg-cover bg-center opacity-40"></div>
-      <div class="absolute inset-0 bg-stone-900/70"></div>
+      <div class="absolute inset-0 bg-black/70"></div>
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-amber-400 font-medium tracking-widest uppercase text-sm">Service</p>
+        <p class="text-gold font-medium tracking-widest uppercase text-sm">Service</p>
         <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">Visa Assistance</h1>
-        <p class="mt-4 text-lg text-stone-300 max-w-2xl mx-auto">We guide you through visa requirements and paperwork for your destination.</p>
+        <p class="mt-4 text-lg text-gold-light max-w-2xl mx-auto">We guide you through visa requirements and paperwork for your destination.</p>
       </div>
     </section>
 
-    <section class="py-16 md:py-24 bg-white">
+    <section class="py-16 md:py-24 bg-neutral-950">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="prose prose-stone prose-lg max-w-none">
-          <p class="text-stone-600 leading-relaxed">
+        <div class="prose prose-invert prose-lg max-w-none">
+          <p class="text-gold-light leading-relaxed">
             Traveling abroad often starts with visas. We take the stress out of the process by guiding you through requirements, required documents, and application steps for your destination—so you can focus on the trip, not the paperwork.
           </p>
-          <h2 class="font-display text-2xl font-bold text-stone-900 mt-10">What we offer</h2>
-          <ul class="mt-4 space-y-2 text-stone-600">
-            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5"></i> Visa requirement checks for your nationality and destination</li>
-            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5"></i> Document checklist and application guidance</li>
-            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5"></i> Support for tourist, business, and transit visas</li>
-            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5"></i> Timelines and tips to avoid delays</li>
+          <h2 class="font-display text-2xl font-bold text-white mt-10">What we offer</h2>
+          <ul class="mt-4 space-y-2 text-gold-light">
+            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i> Visa requirement checks for your nationality and destination</li>
+            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i> Document checklist and application guidance</li>
+            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i> Support for tourist, business, and transit visas</li>
+            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i> Timelines and tips to avoid delays</li>
           </ul>
         </div>
         <div class="mt-12 text-center">
-          <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors">Get visa support</a>
+          <a href="visa-form.html" class="inline-flex items-center justify-center px-8 py-4 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white transition-colors">Get Visa Assistance</a>
         </div>
       </div>
     </section>
   </main>
 
   <div id="footer-placeholder">
-    <div class="h-24 bg-stone-200 flex items-center justify-center"><span class="text-stone-500">Loading…</span></div>
+    <div class="h-24 bg-black border-t border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
+
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="js/load-components.js"></script>
 </body>
