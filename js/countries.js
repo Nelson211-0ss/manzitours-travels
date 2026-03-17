@@ -23,3 +23,30 @@ const COUNTRIES = [
   "Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City",
   "Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"
 ];
+
+/**
+ * Demonyms (nationalities) aligned to the COUNTRIES list order above.
+ * Used for "Nationality" dropdowns (e.g., Ugandan, Algerian).
+ */
+const NATIONALITIES = [
+  "Afghan","Albanian","Algerian","Andorran","Angolan","Antiguan or Barbudan","Argentine","Armenian","Australian","Austrian",
+  "Azerbaijani","Bahamian","Bahraini","Bangladeshi","Barbadian","Belarusian","Belgian","Belizean","Beninese","Bhutanese",
+  "Bolivian","Bosnian or Herzegovinian","Motswana","Brazilian","Bruneian","Bulgarian","Burkinabé","Burundian","Cape Verdean","Cambodian",
+  "Cameroonian","Canadian","Central African","Chadian","Chilean","Chinese","Colombian","Comorian","Congolese","Costa Rican",
+  "Croatian","Cuban","Cypriot","Czech","Danish","Djiboutian","Dominican","Dominican","Ecuadorian","Egyptian",
+  "Salvadoran","Equatorial Guinean","Eritrean","Estonian","Swazi","Ethiopian","Fijian","Finnish","French","Gabonese",
+  "Gambian","Georgian","German","Ghanaian","Greek","Grenadian","Guatemalan","Guinean","Bissau-Guinean","Guyanese",
+  "Haitian","Honduran","Hungarian","Icelandic","Indian","Indonesian","Iranian","Iraqi","Irish","Israeli",
+  "Italian","Jamaican","Japanese","Jordanian","Kazakhstani","Kenyan","I-Kiribati","Kosovar","Kuwaiti","Kyrgyzstani",
+  "Lao","Latvian","Lebanese","Basotho","Liberian","Libyan","Liechtensteiner","Lithuanian","Luxembourger","Malagasy",
+  "Malawian","Malaysian","Maldivian","Malian","Maltese","Marshallese","Mauritanian","Mauritian","Mexican","Micronesian",
+  "Moldovan","Monegasque","Mongolian","Montenegrin","Moroccan","Mozambican","Burmese","Namibian","Nauruan","Nepalese",
+  "Dutch","New Zealander","Nicaraguan","Nigerien","Nigerian","North Korean","Macedonian","Norwegian","Omani","Pakistani",
+  "Palauan","Palestinian","Panamanian","Papua New Guinean","Paraguayan","Peruvian","Filipino","Polish","Portuguese","Qatari",
+  "Romanian","Russian","Rwandan","Kittitian or Nevisian","Saint Lucian","Vincentian","Samoan","Sammarinese","São Toméan","Saudi",
+  "Senegalese","Serbian","Seychellois","Sierra Leonean","Singaporean","Slovak","Slovenian","Solomon Islander","Somali","South African",
+  "South Korean","South Sudanese","Spanish","Sri Lankan","Sudanese","Surinamese","Swedish","Swiss","Syrian","Taiwanese",
+  "Tajikistani","Tanzanian","Thai","Timorese","Togolese","Tongan","Trinidadian or Tobagonian","Tunisian","Turkish","Turkmen",
+  "Tuvaluan","Ugandan","Ukrainian","Emirati","British","American","Uruguayan","Uzbekistani","Ni-Vanuatu","Vatican",
+  "Venezuelan","Vietnamese","Yemeni","Zambian","Zimbabwean"
+];

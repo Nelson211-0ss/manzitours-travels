@@ -53,9 +53,9 @@
           </div>
 
           <div>
-            <label for="country" class="block text-sm font-medium text-gold mb-1">Country <span class="text-red-400">*</span></label>
+            <label for="country" class="block text-sm font-medium text-gold mb-1">Nationality <span class="text-red-400">*</span></label>
             <select id="country" name="country" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition appearance-none cursor-pointer" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22%23C6B289%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 1.25rem; padding-right: 2.5rem;">
-              <option value="">Select your country</option>
+              <option value="">Select your nationality</option>
             </select>
           </div>
 
@@ -162,7 +162,7 @@
       function populateCountries() {
         var select = document.getElementById('country');
         if (!select) return;
-        COUNTRIES.forEach(function(c) {
+        NATIONALITIES.forEach(function(c) {
           var opt = document.createElement('option');
           opt.value = c;
           opt.textContent = c;
@@ -198,7 +198,7 @@
           'Name: ' + data.name,
           'Phone: ' + data.phone,
           'Email: ' + data.email,
-          'Country: ' + data.country,
+          'Nationality: ' + data.country,
           'Passport Type: ' + data.passportType,
           'Number of Days: ' + data.days,
           'Number of People: ' + data.people,
@@ -225,7 +225,7 @@
           ['Name:', data.name],
           ['Phone Number:', data.phone],
           ['Email Address:', data.email],
-          ['Country:', data.country],
+          ['Nationality:', data.country],
           ['Passport Type:', data.passportType],
           ['Number of Days:', data.days],
           ['Number of People:', data.people],
