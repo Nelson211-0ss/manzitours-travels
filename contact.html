@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Google+Sans+Flex:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/forms.css">
   <style>
     .font-display { font-family: 'Fraunces', Georgia, serif; }
     .font-sans { font-family: 'Google Sans Flex', system-ui, sans-serif; }
@@ -23,64 +24,118 @@
     <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
 
-  <main>
-    <!-- Page hero -->
-    <section class="relative py-20 md:py-28 bg-black pt-24 md:pt-32 overflow-hidden">
-      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80')] bg-cover bg-center opacity-40"></div>
-      <div class="absolute inset-0 bg-black/70"></div>
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-gold font-medium tracking-widest uppercase text-sm">Get in touch</p>
-        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">Contact Us</h1>
-        <p class="mt-4 text-lg text-gold-light max-w-2xl mx-auto">Tell us your dates and preferences—we’ll tailor a trip just for you.</p>
+  <main class="relative pb-24">
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-deepBlue via-black to-deepBlue"></div>
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80')] bg-cover bg-center opacity-[0.18]"></div>
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-black/75"></div>
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden pt-28 pb-12 md:pt-36 md:pb-16">
+      <div class="pointer-events-none absolute left-1/4 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-gold/12 blur-[100px]"></div>
+      <div class="pointer-events-none absolute bottom-0 right-0 h-48 w-48 rounded-full bg-deepBlue-light/25 blur-[80px]"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold/90">Get in touch</p>
+        <h1 class="font-display mt-3 max-w-2xl text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">Contact us</h1>
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-gold-light/90 md:text-lg">
+          Share your dates, group size, and what you’re dreaming of—we’ll reply with a tailored proposal, usually within 24 hours.
+        </p>
       </div>
     </section>
 
-    <!-- Contact content -->
-    <section class="py-16 md:py-24 bg-deepBlue">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-          <!-- Contact info -->
-          <div class="lg:col-span-1 space-y-8">
-            <div>
-              <h2 class="font-display text-xl font-bold text-white">Office Address</h2>
-              <p class="mt-2 text-gold-light">1330 Al Zahya, Ajman, UAE</p>
-              <a href="tel:+971551352382" class="mt-2 inline-block text-gold font-semibold hover:text-gold-light">+971 55 135 2382</a>
+    <!-- Content grid -->
+    <section class="relative z-10 px-4 pb-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-8 lg:grid-cols-12 lg:gap-10">
+          <!-- Sidebar -->
+          <aside class="flex flex-col gap-4 lg:col-span-4">
+            <a href="https://wa.me/971551352382?text=Hi%20Honzi%20Tours%20%26%20Travel%2C%20I%27d%20like%20to%20inquire%20about" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 rounded-2xl border border-gold/35 bg-gradient-to-br from-deepBlue-dark/90 to-black/80 p-5 shadow-lg shadow-black/30 backdrop-blur-md transition hover:border-gold hover:bg-gold/5">
+              <span class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-gold/40 bg-black/40 text-gold transition group-hover:border-gold group-hover:text-gold-light">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </span>
+              <div class="min-w-0 text-left">
+                <p class="text-xs font-semibold uppercase tracking-wider text-gold/90">Fastest reply</p>
+                <p class="mt-0.5 font-semibold text-white">WhatsApp</p>
+                <p class="mt-1 text-sm text-gold-light/75">Tap to chat with our team on WhatsApp.</p>
+              </div>
+              <i data-feather="chevron-right" class="ml-auto h-5 w-5 flex-shrink-0 text-gold/50 transition group-hover:translate-x-0.5 group-hover:text-gold"></i>
+            </a>
+
+            <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl">
+              <div class="flex items-start gap-3">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold">
+                  <i data-feather="map-pin" class="h-5 w-5"></i>
+                </span>
+                <div>
+                  <h2 class="font-display text-sm font-bold text-white">Office</h2>
+                  <p class="mt-1 text-sm leading-relaxed text-gold-light/85">1330 Al Zahya, Ajman, UAE</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <h2 class="font-display text-xl font-bold text-white">Email</h2>
-              <a href="mailto:hello@honzitours.com" class="mt-2 inline-block text-gold font-semibold hover:text-gold-light">hello@honzitours.com</a>
-              <p class="mt-1 text-gold-light/70 text-sm">We usually reply within 24 hours.</p>
+
+            <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl">
+              <div class="flex items-start gap-3">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold">
+                  <i data-feather="phone" class="h-5 w-5"></i>
+                </span>
+                <div>
+                  <h2 class="font-display text-sm font-bold text-white">Phone</h2>
+                  <a href="tel:+971551352382" class="mt-1 inline-block text-sm font-semibold text-gold transition hover:text-gold-light">+971 55 135 2382</a>
+                </div>
+              </div>
             </div>
-            <div>
-              <h2 class="font-display text-xl font-bold text-white">Hours</h2>
-              <p class="mt-2 text-gold-light">Mon – Fri: 8:00 – 18:00<br>Sat: 9:00 – 14:00</p>
+
+            <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl">
+              <div class="flex items-start gap-3">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold">
+                  <i data-feather="mail" class="h-5 w-5"></i>
+                </span>
+                <div>
+                  <h2 class="font-display text-sm font-bold text-white">Email</h2>
+                  <a href="mailto:hello@honzitours.com" class="mt-1 inline-block break-all text-sm font-semibold text-gold transition hover:text-gold-light">hello@honzitours.com</a>
+                  <p class="mt-2 text-xs text-gold-light/60">We usually reply within 24 hours.</p>
+                </div>
+              </div>
             </div>
-          </div>
+
+            <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl">
+              <div class="flex items-start gap-3">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold">
+                  <i data-feather="clock" class="h-5 w-5"></i>
+                </span>
+                <div>
+                  <h2 class="font-display text-sm font-bold text-white">Hours</h2>
+                  <p class="mt-1 text-sm leading-relaxed text-gold-light/85">Mon – Fri: 8:00 – 18:00<br>Sat: 9:00 – 14:00</p>
+                </div>
+              </div>
+            </div>
+          </aside>
 
           <!-- Form -->
-          <div class="lg:col-span-2">
-            <div class="rounded-2xl bg-black/50 border border-gold/30 p-6 md:p-8 shadow-sm">
-              <h2 class="font-display text-2xl font-bold text-white">Send an inquiry</h2>
-              <p class="mt-2 text-gold-light text-sm">Fill in the form below and we’ll get back to you with a tailored proposal.</p>
-              <form class="mt-8 space-y-4" action="#" method="post">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="lg:col-span-8">
+            <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/40 backdrop-blur-xl md:p-10">
+              <div class="border-b border-white/10 pb-6">
+                <h2 class="font-display text-2xl font-bold text-white md:text-3xl">Send an inquiry</h2>
+                <p class="mt-2 text-sm leading-relaxed text-gold-light/85">A few fields are enough to get started—we’ll follow up with questions if we need them.</p>
+              </div>
+              <form class="mt-8 space-y-6" action="#" method="post">
+                <div class="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label for="name" class="block text-sm font-medium text-gold-light">Name</label>
-                    <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/50 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="Your name">
+                    <label for="name" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Name <span class="text-rose-400/90">*</span></label>
+                    <input type="text" id="name" name="name" required autocomplete="name" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="Your name">
                   </div>
                   <div>
-                    <label for="email" class="block text-sm font-medium text-gold-light">Email</label>
-                    <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/50 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="you@example.com">
+                    <label for="email" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Email <span class="text-rose-400/90">*</span></label>
+                    <input type="email" id="email" name="email" required autocomplete="email" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="you@example.com">
                   </div>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label for="phone" class="block text-sm font-medium text-gold-light">Phone</label>
-                    <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/50 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="+971 ...">
+                    <label for="phone" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Phone</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="+971 …">
                   </div>
                   <div>
-                    <label for="tour" class="block text-sm font-medium text-gold-light">Tour or interest</label>
-                    <select id="tour" name="tour" class="mt-1 block w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/50 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition">
+                    <label for="tour" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Tour or interest</label>
+                    <select id="tour" name="tour" class="form-select-chevron w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20">
                       <option value="">Select an option</option>
                       <option value="safari">Classic Safari</option>
                       <option value="coastal">Coastal Escape</option>
@@ -92,12 +147,15 @@
                   </div>
                 </div>
                 <div>
-                  <label for="message" class="block text-sm font-medium text-gold-light">Message</label>
-                  <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/50 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="Dates, group size, special requests…"></textarea>
+                  <label for="message" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Message <span class="text-rose-400/90">*</span></label>
+                  <textarea id="message" name="message" rows="5" required class="w-full resize-y rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="Dates, group size, special requests…"></textarea>
                 </div>
-                <button type="submit" class="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white transition-colors shadow-md">
-                  Send inquiry
-                </button>
+                <div class="flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                  <p class="text-xs text-gold-light/55">By sending this form, you agree we may contact you about your trip.</p>
+                  <button type="submit" class="inline-flex w-full items-center justify-center rounded-full bg-gold px-10 py-4 text-sm font-semibold text-black transition hover:bg-gold-dark hover:text-white sm:w-auto">
+                    Send inquiry
+                  </button>
+                </div>
               </form>
             </div>
           </div>

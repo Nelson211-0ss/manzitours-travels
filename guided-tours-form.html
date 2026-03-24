@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Google+Sans+Flex:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/forms.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     .font-display { font-family: 'Fraunces', Georgia, serif; }
@@ -24,127 +25,138 @@
     <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
 
-  <main class="relative min-h-[calc(100vh-12rem)] py-16 md:py-24 overflow-hidden">
-    <!-- Background image: guided tour / destination -->
-    <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=1920&q=80');"></div>
-    <div class="absolute inset-0 z-0 bg-black/70"></div>
+  <main class="relative min-h-[calc(100dvh-4rem)] overflow-hidden pt-24 pb-16 md:min-h-[calc(100dvh-5rem)] md:pt-28 md:pb-20">
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-deepBlue via-black to-deepBlue"></div>
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=1920&q=80')] bg-cover bg-center opacity-25"></div>
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-black/65"></div>
 
-    <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h1 class="font-display text-3xl md:text-4xl font-bold text-white">Guided Tours Request</h1>
-        <p class="mt-2 text-gold-light">Fill out the form below and we'll send your details to our team via WhatsApp</p>
+    <div class="relative z-10 mx-auto max-w-xl px-4 sm:px-6">
+      <div class="mb-8 text-center">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold/90">Guided</p>
+        <h1 class="font-display mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">Guided tours request</h1>
+        <p class="mt-4 text-sm leading-relaxed text-gold-light/90">Choose your interests and dates—we’ll plan the rest.</p>
       </div>
 
-      <form id="guided-form-el" class="rounded-2xl border border-gold/30 bg-black/60 backdrop-blur-sm p-6 md:p-8 shadow-xl">
+      <form id="guided-form-el" class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/40 backdrop-blur-xl md:p-8">
         <div class="space-y-6">
           <div>
-            <label for="name" class="block text-sm font-medium text-gold mb-1">Name <span class="text-red-400">*</span></label>
-            <input type="text" id="name" name="name" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="Your full name">
+            <label for="name" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Full name <span class="text-rose-400/90">*</span></label>
+            <input type="text" id="name" name="name" required class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="Lead guest" autocomplete="name">
           </div>
 
-          <div>
-            <label for="phone" class="block text-sm font-medium text-gold mb-1">Phone Number <span class="text-red-400">*</span></label>
-            <input type="tel" id="phone" name="phone" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="+971 55 135 2382">
-          </div>
-
-          <div>
-            <label for="email" class="block text-sm font-medium text-gold mb-1">Email Address <span class="text-red-400">*</span></label>
-            <input type="email" id="email" name="email" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="you@example.com">
-          </div>
-
-          <div>
-            <label for="country" class="block text-sm font-medium text-gold mb-1">Nationality <span class="text-red-400">*</span></label>
-            <select id="country" name="country" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition appearance-none cursor-pointer" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22%23C6B289%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 1.25rem; padding-right: 2.5rem;">
-              <option value="">Select your nationality</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="passport-type" class="block text-sm font-medium text-gold mb-1">Passport Type</label>
-            <select id="passport-type" name="passportType" class="w-full rounded-lg border border-gold/30 bg-black/30 text-white px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition appearance-none cursor-pointer" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22%23C6B289%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 1.25rem; padding-right: 2.5rem;">
-              <option value="">Select passport type</option>
-              <option value="Ordinary">Ordinary</option>
-              <option value="Official">Official</option>
-              <option value="Diplomatic">Diplomatic</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="days" class="block text-sm font-medium text-gold mb-1">Number of Days</label>
-            <input type="number" id="days" name="days" min="1" class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="e.g. 7">
-          </div>
-
-          <div>
-            <label for="people" class="block text-sm font-medium text-gold mb-1">Number of People</label>
-            <input type="number" id="people" name="people" min="1" class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="e.g. 2">
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-gold mb-2">Tick Your Interest for Guided Tour</label>
-            <div class="space-y-3 rounded-lg border border-gold/30 bg-black/30 p-4">
-              <label class="flex items-start gap-2 cursor-pointer">
-                <input type="checkbox" name="interest" value="Dubai City Tour (City Drive, Dubai Mall and Burj Khalifa Views)" class="w-4 h-4 mt-1 text-gold border-gold/50 bg-black rounded focus:ring-gold">
-                <span class="text-gold-light text-sm">1. Dubai City Tour (City Drive, Dubai Mall and Burj Khalifa Views)</span>
-              </label>
-              <label class="flex items-start gap-2 cursor-pointer">
-                <input type="checkbox" name="interest" value="Abu Dhabi City Tour (Beaches And City)" class="w-4 h-4 mt-1 text-gold border-gold/50 bg-black rounded focus:ring-gold">
-                <span class="text-gold-light text-sm">2. Abu Dhabi City Tour (Beaches And City)</span>
-              </label>
-              <label class="flex items-start gap-2 cursor-pointer">
-                <input type="checkbox" name="interest" value="Dubai Frame Tour" class="w-4 h-4 mt-1 text-gold border-gold/50 bg-black rounded focus:ring-gold">
-                <span class="text-gold-light text-sm">3. Dubai Frame Tour</span>
-              </label>
-              <label class="flex items-start gap-2 cursor-pointer">
-                <input type="checkbox" name="interest" value="Desert Safari and Sand Bashing" class="w-4 h-4 mt-1 text-gold border-gold/50 bg-black rounded focus:ring-gold">
-                <span class="text-gold-light text-sm">4. Desert Safari and Sand Bashing</span>
-              </label>
-              <label class="flex items-start gap-2 cursor-pointer">
-                <input type="checkbox" name="interest" value="Cultural & Heritage Tours" class="w-4 h-4 mt-1 text-gold border-gold/50 bg-black rounded focus:ring-gold">
-                <span class="text-gold-light text-sm">5. Cultural &amp; Heritage Tours</span>
-              </label>
-              <label class="flex items-start gap-2 cursor-pointer">
-                <input type="checkbox" name="interest" value="Miracle Gardens and Theme Parks" class="w-4 h-4 mt-1 text-gold border-gold/50 bg-black rounded focus:ring-gold">
-                <span class="text-gold-light text-sm">6. Miracle Gardens and Theme Parks</span>
-              </label>
-              <label class="flex items-start gap-2 cursor-pointer">
-                <input type="checkbox" name="interest" value="Marina Yacht Experiences" class="w-4 h-4 mt-1 text-gold border-gold/50 bg-black rounded focus:ring-gold">
-                <span class="text-gold-light text-sm">7. Marina Yacht Experiences</span>
-              </label>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="phone" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Phone <span class="text-rose-400/90">*</span></label>
+              <input type="tel" id="phone" name="phone" required class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="+971 …" autocomplete="tel">
+            </div>
+            <div>
+              <label for="email" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Email <span class="text-rose-400/90">*</span></label>
+              <input type="email" id="email" name="email" required class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="you@example.com" autocomplete="email">
             </div>
           </div>
 
           <div>
-            <label for="travel-date" class="block text-sm font-medium text-gold mb-1">Expected Travel Date</label>
-            <input type="date" id="travel-date" name="travelDate" class="w-full rounded-lg border border-gold/30 bg-black/30 text-white px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition [color-scheme:dark]">
+            <label for="country" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Nationality <span class="text-rose-400/90">*</span></label>
+            <select id="country" name="country" required class="form-select-chevron w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20">
+              <option value="">Choose nationality</option>
+            </select>
           </div>
 
-          <div>
-            <label for="departure-date" class="block text-sm font-medium text-gold mb-1">Date of Departure</label>
-            <input type="date" id="departure-date" name="departureDate" class="w-full rounded-lg border border-gold/30 bg-black/30 text-white px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition [color-scheme:dark]">
-          </div>
+          <div class="border-t border-white/10 pt-6">
+            <p class="mb-4 font-display text-sm font-semibold text-white/95">Trip &amp; group</p>
+            <div class="space-y-5">
+              <div>
+                <label for="passport-type" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Passport type</label>
+                <select id="passport-type" name="passportType" class="form-select-chevron w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20">
+                  <option value="">Select type</option>
+                  <option value="Ordinary">Ordinary</option>
+                  <option value="Official">Official</option>
+                  <option value="Diplomatic">Diplomatic</option>
+                </select>
+              </div>
 
-          <div>
-            <label class="block text-sm font-medium text-gold mb-2">Require Airport Pickup and Drop</label>
-            <div class="flex gap-6">
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="airportPickup" value="YES" class="w-4 h-4 text-gold border-gold/50 bg-black focus:ring-gold">
-                <span class="text-gold-light">YES</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="airportPickup" value="NO" checked class="w-4 h-4 text-gold border-gold/50 bg-black focus:ring-gold">
-                <span class="text-gold-light">NO</span>
-              </label>
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label for="days" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Number of days</label>
+                  <input type="number" id="days" name="days" min="1" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="e.g. 7">
+                </div>
+                <div>
+                  <label for="people" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Number of people</label>
+                  <input type="number" id="people" name="people" min="1" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="e.g. 2">
+                </div>
+              </div>
+
+              <div>
+                <p class="mb-3 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Tour interests <span class="font-normal normal-case text-gold-light/60">(select any)</span></p>
+                <div class="max-h-[min(22rem,50vh)] space-y-2 overflow-y-auto rounded-2xl border border-white/10 bg-black/40 p-3 pr-2">
+                  <label class="flex cursor-pointer gap-3 rounded-xl border border-transparent bg-black/30 px-3 py-2.5 transition hover:border-white/10 has-[:checked]:border-gold/40 has-[:checked]:bg-gold/10">
+                    <input type="checkbox" name="interest" value="Dubai City Tour (City Drive, Dubai Mall and Burj Khalifa Views)" class="mt-0.5 h-4 w-4 shrink-0 rounded border-white/25 bg-black text-gold focus:ring-gold/40">
+                    <span class="text-sm leading-snug text-gold-light/95">Dubai City Tour (City Drive, Dubai Mall and Burj Khalifa Views)</span>
+                  </label>
+                  <label class="flex cursor-pointer gap-3 rounded-xl border border-transparent bg-black/30 px-3 py-2.5 transition hover:border-white/10 has-[:checked]:border-gold/40 has-[:checked]:bg-gold/10">
+                    <input type="checkbox" name="interest" value="Abu Dhabi City Tour (Beaches And City)" class="mt-0.5 h-4 w-4 shrink-0 rounded border-white/25 bg-black text-gold focus:ring-gold/40">
+                    <span class="text-sm leading-snug text-gold-light/95">Abu Dhabi City Tour (Beaches And City)</span>
+                  </label>
+                  <label class="flex cursor-pointer gap-3 rounded-xl border border-transparent bg-black/30 px-3 py-2.5 transition hover:border-white/10 has-[:checked]:border-gold/40 has-[:checked]:bg-gold/10">
+                    <input type="checkbox" name="interest" value="Dubai Frame Tour" class="mt-0.5 h-4 w-4 shrink-0 rounded border-white/25 bg-black text-gold focus:ring-gold/40">
+                    <span class="text-sm leading-snug text-gold-light/95">Dubai Frame Tour</span>
+                  </label>
+                  <label class="flex cursor-pointer gap-3 rounded-xl border border-transparent bg-black/30 px-3 py-2.5 transition hover:border-white/10 has-[:checked]:border-gold/40 has-[:checked]:bg-gold/10">
+                    <input type="checkbox" name="interest" value="Desert Safari and Sand Bashing" class="mt-0.5 h-4 w-4 shrink-0 rounded border-white/25 bg-black text-gold focus:ring-gold/40">
+                    <span class="text-sm leading-snug text-gold-light/95">Desert Safari and Sand Bashing</span>
+                  </label>
+                  <label class="flex cursor-pointer gap-3 rounded-xl border border-transparent bg-black/30 px-3 py-2.5 transition hover:border-white/10 has-[:checked]:border-gold/40 has-[:checked]:bg-gold/10">
+                    <input type="checkbox" name="interest" value="Cultural & Heritage Tours" class="mt-0.5 h-4 w-4 shrink-0 rounded border-white/25 bg-black text-gold focus:ring-gold/40">
+                    <span class="text-sm leading-snug text-gold-light/95">Cultural &amp; Heritage Tours</span>
+                  </label>
+                  <label class="flex cursor-pointer gap-3 rounded-xl border border-transparent bg-black/30 px-3 py-2.5 transition hover:border-white/10 has-[:checked]:border-gold/40 has-[:checked]:bg-gold/10">
+                    <input type="checkbox" name="interest" value="Miracle Gardens and Theme Parks" class="mt-0.5 h-4 w-4 shrink-0 rounded border-white/25 bg-black text-gold focus:ring-gold/40">
+                    <span class="text-sm leading-snug text-gold-light/95">Miracle Gardens and Theme Parks</span>
+                  </label>
+                  <label class="flex cursor-pointer gap-3 rounded-xl border border-transparent bg-black/30 px-3 py-2.5 transition hover:border-white/10 has-[:checked]:border-gold/40 has-[:checked]:bg-gold/10">
+                    <input type="checkbox" name="interest" value="Marina Yacht Experiences" class="mt-0.5 h-4 w-4 shrink-0 rounded border-white/25 bg-black text-gold focus:ring-gold/40">
+                    <span class="text-sm leading-snug text-gold-light/95">Marina Yacht Experiences</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label for="travel-date" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Expected travel</label>
+                  <input type="date" id="travel-date" name="travelDate" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20 [color-scheme:dark]">
+                </div>
+                <div>
+                  <label for="departure-date" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Departure</label>
+                  <input type="date" id="departure-date" name="departureDate" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20 [color-scheme:dark]">
+                </div>
+              </div>
+
+              <div>
+                <p class="mb-3 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Airport pickup &amp; drop-off</p>
+                <div class="flex flex-wrap gap-2">
+                  <label class="flex min-w-[7rem] flex-1 cursor-pointer">
+                    <input type="radio" name="airportPickup" value="YES" class="peer sr-only">
+                    <span class="flex w-full items-center justify-center rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-center text-sm font-medium text-white/90 transition peer-checked:border-gold/60 peer-checked:bg-gold/15 peer-checked:text-gold">Yes</span>
+                  </label>
+                  <label class="flex min-w-[7rem] flex-1 cursor-pointer">
+                    <input type="radio" name="airportPickup" value="NO" checked class="peer sr-only">
+                    <span class="flex w-full items-center justify-center rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-center text-sm font-medium text-white/90 transition peer-checked:border-gold/60 peer-checked:bg-gold/15 peer-checked:text-gold">No</span>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="mt-8">
-          <button type="submit" id="submit-btn" class="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white transition-colors">
-            <i data-feather="send" class="w-5 h-5"></i>
-            Submit Request
+          <button type="submit" id="submit-btn" class="flex w-full items-center justify-center gap-2 rounded-full bg-gold py-4 text-base font-semibold text-black shadow-lg shadow-gold/20 transition hover:bg-gold-dark hover:text-white disabled:opacity-60">
+            <i data-feather="send" class="h-5 w-5"></i>
+            Submit request
           </button>
         </div>
       </form>
+
+      <p class="mt-6 text-center text-xs text-gold-light/60"><a href="guided-destinations.html" class="text-gold/80 underline-offset-2 hover:text-gold hover:underline">← Back to guided destinations</a></p>
     </div>
   </main>
 
@@ -295,7 +307,7 @@
 
         function resetBtn(b) {
           b.disabled = false;
-          b.innerHTML = '<i data-feather="send" class="w-5 h-5"></i> Submit Request';
+          b.innerHTML = '<i data-feather="send" class="h-5 w-5"></i> Submit request';
           if (window.feather) window.feather.replace();
         }
       });

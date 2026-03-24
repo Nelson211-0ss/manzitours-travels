@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <title>Visa Assistance – Honzi Tours &amp; Travel</title>
-  <meta name="description" content="We guide you through visa requirements and paperwork for your destination. Stress-free visa support with Honzi Tours and Travels.">
+  <meta name="description" content="Tourist, business, and transit visas plus expert visa consultation. Honzi Tours &amp; Travel simplifies your application journey.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { fontFamily: { sans: ['Google Sans Flex', 'system-ui', 'sans-serif'], display: ['Fraunces', 'Georgia', 'serif'] }, colors: { gold: { DEFAULT: '#C1A061', light: '#C6B289', dark: '#A68B4B' }, deepBlue: { DEFAULT: '#0f172a', light: '#1e3a5f', dark: '#0c1929' }, sunset: { DEFAULT: '#e07c54', light: '#f5a962', dark: '#c9613d' } } } } };
@@ -16,6 +16,15 @@
   <style>
     .font-display { font-family: 'Fraunces', Georgia, serif; }
     .font-sans { font-family: 'Google Sans Flex', system-ui, sans-serif; }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up { animation: fade-up 0.6s ease-out forwards; }
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .opacity-0-init { opacity: 0; }
   </style>
 </head>
 <body class="font-sans text-gold-light antialiased bg-black">
@@ -24,32 +33,91 @@
   </div>
 
   <main>
-    <section class="relative py-20 md:py-28 bg-black pt-24 md:pt-32 overflow-hidden">
-      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80')] bg-cover bg-center opacity-40"></div>
-      <div class="absolute inset-0 bg-black/70"></div>
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-gold font-medium tracking-widest uppercase text-sm">Service</p>
-        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">Visa Assistance</h1>
-        <p class="mt-4 text-lg text-gold-light max-w-2xl mx-auto">We guide you through visa requirements and paperwork for your destination.</p>
+    <!-- Hero -->
+    <section class="relative flex min-h-[min(520px,78vh)] items-center overflow-hidden pt-24 pb-16 md:min-h-[min(580px,72vh)] md:pt-32 md:pb-20">
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1613244470189-15e1da3279d6?w=1920&q=80"
+          alt="Passport and travel documents"
+          class="h-full w-full object-cover object-[center_40%] md:object-center"
+          width="1920"
+          height="1280"
+          decoding="async"
+        />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/85 via-deepBlue/80 to-black/90"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_20%,rgba(193,160,97,0.12),transparent_55%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_100%_30%,rgba(30,58,95,0.45),transparent)]"></div>
+      <div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold opacity-0-init animate-fade-up drop-shadow-sm">Visa services</p>
+          <h1 class="font-display mt-4 text-4xl font-bold tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl opacity-0-init animate-fade-up delay-100">Visa assistance</h1>
+          <p class="mt-5 text-lg leading-relaxed text-white/95 sm:text-xl opacity-0-init animate-fade-up delay-200 [text-shadow:0_1px_24px_rgba(0,0,0,0.45)]">
+            Clear guidance for applications, documents, and timelines—so you can travel with confidence.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="py-16 md:py-24 bg-neutral-950">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="prose prose-invert prose-lg max-w-none">
-          <p class="text-gold-light leading-relaxed">
-            Traveling abroad often starts with visas. We take the stress out of the process by guiding you through requirements, required documents, and application steps for your destination—so you can focus on the trip, not the paperwork.
-          </p>
-          <h2 class="font-display text-2xl font-bold text-white mt-10">What we offer</h2>
-          <ul class="mt-4 space-y-2 text-gold-light">
-            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i> Visa requirement checks for your nationality and destination</li>
-            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i> Document checklist and application guidance</li>
-            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i> Support for tourist, business, and transit visas</li>
-            <li class="flex items-start gap-2"><i data-feather="check" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i> Timelines and tips to avoid delays</li>
-          </ul>
+    <!-- Intro strip -->
+    <section class="relative border-y border-gold/15 bg-black/80 py-10 md:py-12">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p class="mx-auto max-w-3xl text-center text-base leading-relaxed text-gold-light md:text-lg">
+          Whether you are visiting for leisure, business, or in transit, we help you understand requirements and stay organized from start to finish.
+        </p>
+      </div>
+    </section>
+
+    <!-- What we offer -->
+    <section class="relative py-16 md:py-24">
+      <div class="absolute inset-0 bg-gradient-to-b from-black via-deepBlue/40 to-black"></div>
+      <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-display text-3xl font-bold text-white md:text-4xl">What we offer</h2>
+          <p class="mt-3 text-gold-light">Four ways we support your visa needs</p>
         </div>
-        <div class="mt-12 text-center">
-          <a href="visa-form.html" class="inline-flex items-center justify-center px-8 py-4 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white transition-colors">Get Visa Assistance</a>
+
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10">
+            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gold/15 text-gold ring-1 ring-gold/25 transition-colors group-hover:bg-gold/25">
+              <i data-feather="map" class="h-5 w-5" aria-hidden="true"></i>
+            </div>
+            <h3 class="font-display mt-5 text-xl font-bold text-white">Tourist visas</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gold-light/90">Support for leisure travel applications and destination-specific requirements.</p>
+          </article>
+
+          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10">
+            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gold/15 text-gold ring-1 ring-gold/25 transition-colors group-hover:bg-gold/25">
+              <i data-feather="briefcase" class="h-5 w-5" aria-hidden="true"></i>
+            </div>
+            <h3 class="font-display mt-5 text-xl font-bold text-white">Business visa</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gold-light/90">Help structuring business travel documentation and application steps.</p>
+          </article>
+
+          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10">
+            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gold/15 text-gold ring-1 ring-gold/25 transition-colors group-hover:bg-gold/25">
+              <i data-feather="navigation" class="h-5 w-5" aria-hidden="true"></i>
+            </div>
+            <h3 class="font-display mt-5 text-xl font-bold text-white">Transit visa</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gold-light/90">Guidance for short stops and layovers when a transit visa is required.</p>
+          </article>
+
+          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10">
+            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gold/15 text-gold ring-1 ring-gold/25 transition-colors group-hover:bg-gold/25">
+              <i data-feather="message-circle" class="h-5 w-5" aria-hidden="true"></i>
+            </div>
+            <h3 class="font-display mt-5 text-xl font-bold text-white">Visa Consultation</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gold-light/90">One-to-one advice on eligibility, timelines, and how to avoid common pitfalls.</p>
+          </article>
+        </div>
+
+        <div class="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+          <a href="visa-form.html" class="inline-flex w-full items-center justify-center rounded-full bg-gold px-10 py-4 text-base font-semibold text-black shadow-lg shadow-gold/20 transition hover:bg-gold-dark hover:text-white sm:w-auto">
+            Start your application
+          </a>
+          <a href="contact.html" class="inline-flex w-full items-center justify-center rounded-full border-2 border-gold/60 bg-transparent px-10 py-4 text-base font-semibold text-white transition hover:border-gold hover:bg-gold/10 sm:w-auto">
+            Ask a question
+          </a>
         </div>
       </div>
     </section>

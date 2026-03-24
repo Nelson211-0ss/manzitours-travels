@@ -23,84 +23,145 @@
     <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
 
-  <main>
-    <!-- Page hero -->
-    <section class="relative py-20 md:py-28 bg-black pt-24 md:pt-32 overflow-hidden">
-      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80')] bg-cover bg-center opacity-40"></div>
-      <div class="absolute inset-0 bg-black/70"></div>
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-gold font-medium tracking-widest uppercase text-sm">Our Story</p>
-        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2">Honzi Tours and Travels</h1>
-        <p class="mt-4 text-lg text-gold-light max-w-2xl mx-auto">Discover the UAE. Travel with Confidence.</p>
+  <main class="pb-24">
+    <!-- Hero -->
+    <section class="relative min-h-[56vh] overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1748373448914-1d7f882700e2?w=1920&q=80')] bg-cover bg-center"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/65 to-black"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black/40"></div>
+      <div class="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full bg-gold/10 blur-[100px]"></div>
+      <div class="pointer-events-none absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-deepBlue-light/20 blur-[90px]"></div>
+      <div class="relative z-10 mx-auto flex max-w-7xl flex-col justify-end px-4 sm:px-6 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold/90">Our story</p>
+        <h1 class="font-display mt-3 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-6xl">
+          Honzi Tours <span class="text-gold italic">&amp;</span> Travels
+        </h1>
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-gold-light/95 md:text-lg">
+          Discover the UAE. Travel with confidence—curated journeys, local insight, and support from first hello to homecoming.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="contact.html" class="inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-black transition hover:bg-gold-dark hover:text-white">
+            Plan a trip
+          </a>
+          <a href="tours.html" class="inline-flex items-center justify-center rounded-full border border-gold/50 bg-black/30 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-gold hover:bg-gold/10">
+            Browse tours
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- About content -->
-    <section class="py-16 md:py-24 bg-deepBlue">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div class="text-justify">
-            <p class="text-gold font-semibold uppercase tracking-wider text-sm">About us</p>
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">Who We Are</h2>
-            <p class="mt-6 text-gold-light leading-relaxed">
-              We are a UAE-based tours and travel company committed to delivering exceptional service, authentic experiences, and seamless travel solutions. With deep local knowledge and a passion for hospitality, we proudly serve individuals, families, groups, and corporate clients.
+    <!-- Stats strip -->
+    <section class="relative z-20 -mt-6 border-y border-gold/10 bg-deepBlue/90 px-4 py-10 backdrop-blur-xl sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
+        <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:text-left">
+          <p class="font-display text-2xl font-bold text-gold md:text-3xl">UAE</p>
+          <p class="mt-1 text-xs uppercase tracking-wider text-gold-light/70">Home base</p>
+        </div>
+        <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:text-left">
+          <p class="font-display text-2xl font-bold text-white md:text-3xl">24/7</p>
+          <p class="mt-1 text-xs uppercase tracking-wider text-gold-light/70">Trip support</p>
+        </div>
+        <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:text-left">
+          <p class="font-display text-2xl font-bold text-white md:text-3xl">Groups</p>
+          <p class="mt-1 text-xs uppercase tracking-wider text-gold-light/70">&amp; private</p>
+        </div>
+        <div class="col-span-2 rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:col-span-1 md:text-left">
+          <p class="font-display text-2xl font-bold text-white md:text-3xl">Tailored</p>
+          <p class="mt-1 text-xs uppercase tracking-wider text-gold-light/70">Itineraries</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who we are -->
+    <section class="relative py-16 md:py-28">
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black via-deepBlue/40 to-black"></div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold/90">About us</p>
+            <h2 class="font-display mt-2 text-3xl font-bold text-white md:text-4xl">Who we are</h2>
+            <p class="mt-6 leading-relaxed text-gold-light/95">
+              We are a UAE-based tours and travel company committed to exceptional service, authentic experiences, and seamless logistics. With deep local knowledge and a passion for hospitality, we serve individuals, families, groups, and corporate clients.
             </p>
-            <h3 class="font-display text-xl font-bold text-gold mt-8">Honzi Tours and Travels</h3>
-            <p class="text-gold-light/90 font-medium mt-2">Discover the UAE. Travel with Confidence.</p>
-            <p class="mt-4 text-gold-light leading-relaxed">
-              At Honzi Tours and Travels, we specialize in crafting unforgettable travel experiences across the United Arab Emirates and beyond. Whether you're seeking luxury escapes, thrilling adventures, cultural discoveries, or pure relaxation, we design journeys that turn moments into lifelong memories.
-            </p>
-            <p class="mt-4 text-gold-light leading-relaxed">
-              From iconic city tours and desert safaris to international holiday packages, we are your trusted travel partner—every step of the way.
+            <p class="mt-4 leading-relaxed text-gold-light/90">
+              From iconic city tours and desert safaris to international holiday packages, we design journeys that turn moments into lifelong memories—your trusted partner every step of the way.
             </p>
             <ul class="mt-8 space-y-3">
-              <li class="flex items-center gap-3 text-gold-light"><span class="text-gold">✓</span> Expert local guides</li>
-              <li class="flex items-center gap-3 text-gold-light"><span class="text-gold">✓</span> Small groups & private options</li>
-              <li class="flex items-center gap-3 text-gold-light"><span class="text-gold">✓</span> Sustainable & community-focused</li>
-              <li class="flex items-center gap-3 text-gold-light"><span class="text-gold">✓</span> 24/7 support on every trip</li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/15 text-xs font-bold text-gold">✓</span>
+                <span>Expert local guides &amp; vetted partners</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/15 text-xs font-bold text-gold">✓</span>
+                <span>Small groups, private options, and custom routes</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/15 text-xs font-bold text-gold">✓</span>
+                <span>Thoughtful pacing and clear communication</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/15 text-xs font-bold text-gold">✓</span>
+                <span>Support before, during, and after your trip</span>
+              </li>
             </ul>
           </div>
-          <div class="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:min-h-[400px] border border-gold/20">
-            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" alt="Travel experience" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          <div class="relative">
+            <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-gold/20 via-transparent to-deepBlue-light/20 opacity-60 blur-2xl"></div>
+            <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/50 backdrop-blur-sm">
+              <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=900&q=80" alt="Open road and travel adventure" width="900" height="675" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <p class="absolute bottom-5 left-5 right-5 text-sm font-medium text-white/95">Discover the UAE. Travel with confidence.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Values -->
-    <section class="py-16 md:py-24 bg-black">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <p class="text-gold font-semibold uppercase tracking-wider text-sm">Our values</p>
-          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">What We Stand For</h2>
+    <section class="border-t border-gold/10 py-16 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold/90">Our values</p>
+          <h2 class="font-display mt-2 text-3xl font-bold text-white md:text-4xl">What we stand for</h2>
+          <p class="mt-4 text-sm leading-relaxed text-gold-light/80 md:text-base">Principles that shape every itinerary and every conversation with our guests.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="text-center p-6 rounded-2xl bg-black/50 border border-gold/30 hover:border-gold hover:shadow-gold/10 transition-shadow text-justify">
-            <div class="w-12 h-12 rounded-full bg-gold/20 text-gold flex items-center justify-center mx-auto text-xl font-bold">1</div>
-            <h3 class="font-display text-xl font-bold text-white mt-4">Authenticity</h3>
-            <p class="mt-2 text-gold-light text-sm">Real encounters with people and places—no staged experiences.</p>
-          </div>
-          <div class="text-center p-6 rounded-2xl bg-black/50 border border-gold/30 hover:border-gold hover:shadow-gold/10 transition-shadow text-justify">
-            <div class="w-12 h-12 rounded-full bg-gold/20 text-gold flex items-center justify-center mx-auto text-xl font-bold">2</div>
-            <h3 class="font-display text-xl font-bold text-white mt-4">Sustainability</h3>
-            <p class="mt-2 text-gold-light text-sm">We minimize impact and support conservation and local economies.</p>
-          </div>
-          <div class="text-center p-6 rounded-2xl bg-black/50 border border-gold/30 hover:border-gold hover:shadow-gold/10 transition-shadow text-justify">
-            <div class="w-12 h-12 rounded-full bg-gold/20 text-gold flex items-center justify-center mx-auto text-xl font-bold">3</div>
-            <h3 class="font-display text-xl font-bold text-white mt-4">Care</h3>
-            <p class="mt-2 text-gold-light text-sm">From booking to return, we’re with you every step of the way.</p>
-          </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <article class="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-8 transition hover:border-gold/35 hover:shadow-lg hover:shadow-gold/5">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold transition group-hover:bg-gold/25">
+              <i data-feather="compass" class="h-6 w-6"></i>
+            </div>
+            <h3 class="font-display mt-5 text-xl font-bold text-white">Authenticity</h3>
+            <p class="mt-3 text-sm leading-relaxed text-gold-light/85">Real encounters with people and places—experiences that feel genuine, not staged.</p>
+          </article>
+          <article class="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-8 transition hover:border-gold/35 hover:shadow-lg hover:shadow-gold/5">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold transition group-hover:bg-gold/25">
+              <i data-feather="globe" class="h-6 w-6"></i>
+            </div>
+            <h3 class="font-display mt-5 text-xl font-bold text-white">Sustainability</h3>
+            <p class="mt-3 text-sm leading-relaxed text-gold-light/85">We aim to minimize impact and support conservation and local economies where we travel.</p>
+          </article>
+          <article class="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-8 transition hover:border-gold/35 hover:shadow-lg hover:shadow-gold/5">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold transition group-hover:bg-gold/25">
+              <i data-feather="heart" class="h-6 w-6"></i>
+            </div>
+            <h3 class="font-display mt-5 text-xl font-bold text-white">Care</h3>
+            <p class="mt-3 text-sm leading-relaxed text-gold-light/85">From booking to return, we’re with you—with clear answers and calm support.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-16 md:py-24 bg-deepBlue text-gold-light">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-white">Ready to explore with us?</h2>
-        <p class="mt-4 text-gold-light/80">Tell us your dream trip—we’ll make it happen.</p>
-        <a href="contact.html" class="mt-8 inline-flex items-center justify-center px-8 py-4 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white transition-colors">Get in touch</a>
+    <section class="relative overflow-hidden py-16 md:py-24">
+      <div class="absolute inset-0 bg-gradient-to-br from-deepBlue via-black to-deepBlue-dark"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80')] bg-cover bg-center opacity-20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+      <div class="relative z-10 mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <h2 class="font-display text-3xl font-bold text-white md:text-4xl">Ready to explore with us?</h2>
+        <p class="mt-4 text-gold-light/85">Tell us your dream trip—we’ll shape the details and handle the rest.</p>
+        <a href="contact.html" class="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-10 py-4 text-sm font-semibold text-black transition hover:bg-gold-dark hover:text-white">
+          Get in touch
+        </a>
       </div>
     </section>
   </main>

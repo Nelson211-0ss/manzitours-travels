@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <title>Tailored Tours Request – Honzi Tours &amp; Travel</title>
-  <meta name="description" content="Submit your tailored tour request. We'll design a custom itinerary around your dates and interests.">
+  <title>Tailored Experiences Request – Honzi Tours &amp; Travel</title>
+  <meta name="description" content="Submit your tailored experience request. We'll design a custom itinerary around your dates and interests.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { fontFamily: { sans: ['Google Sans Flex', 'system-ui', 'sans-serif'], display: ['Fraunces', 'Georgia', 'serif'] }, colors: { gold: { DEFAULT: '#C1A061', light: '#C6B289', dark: '#A68B4B' }, deepBlue: { DEFAULT: '#0f172a', light: '#1e3a5f', dark: '#0c1929' }, sunset: { DEFAULT: '#e07c54', light: '#f5a962', dark: '#c9613d' } } } } };
@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Google+Sans+Flex:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/forms.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     .font-display { font-family: 'Fraunces', Georgia, serif; }
@@ -24,79 +25,88 @@
     <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
 
-  <main class="relative min-h-[calc(100vh-12rem)] py-16 md:py-24 overflow-hidden">
-    <!-- Background image: travel / adventure -->
-    <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80');"></div>
-    <div class="absolute inset-0 z-0 bg-black/70"></div>
+  <main class="relative min-h-[calc(100dvh-4rem)] overflow-hidden pt-24 pb-16 md:min-h-[calc(100dvh-5rem)] md:pt-28 md:pb-20">
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-deepBlue via-black to-deepBlue"></div>
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80')] bg-cover bg-center opacity-25"></div>
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-black/65"></div>
 
-    <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h1 class="font-display text-3xl md:text-4xl font-bold text-white">Tailored Tours Request</h1>
-        <p class="mt-2 text-gold-light">Fill out the form below and we'll send your details to our team via WhatsApp</p>
+    <div class="relative z-10 mx-auto max-w-lg px-4 sm:px-6">
+      <div class="mb-8 text-center">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold/90">Tailored</p>
+        <h1 class="font-display mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">Tailored experiences request</h1>
+        <p class="mt-4 text-sm leading-relaxed text-gold-light/90">Tell us who’s traveling—we’ll tailor the rest.</p>
       </div>
 
-      <form id="tailored-form-el" class="rounded-2xl border border-gold/30 bg-black/60 backdrop-blur-sm p-6 md:p-8 shadow-xl">
+      <form id="tailored-form-el" class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/40 backdrop-blur-xl md:p-8">
         <div class="space-y-6">
           <div>
-            <label for="name" class="block text-sm font-medium text-gold mb-1">Name <span class="text-red-400">*</span></label>
-            <input type="text" id="name" name="name" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="Your full name">
+            <label for="name" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Full name <span class="text-rose-400/90">*</span></label>
+            <input type="text" id="name" name="name" required class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="Your name" autocomplete="name">
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="phone" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Phone <span class="text-rose-400/90">*</span></label>
+              <input type="tel" id="phone" name="phone" required class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="+971 …" autocomplete="tel">
+            </div>
+            <div>
+              <label for="email" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Email <span class="text-rose-400/90">*</span></label>
+              <input type="email" id="email" name="email" required class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="you@example.com" autocomplete="email">
+            </div>
           </div>
 
           <div>
-            <label for="phone" class="block text-sm font-medium text-gold mb-1">Phone Number <span class="text-red-400">*</span></label>
-            <input type="tel" id="phone" name="phone" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="+971 55 135 2382">
-          </div>
-
-          <div>
-            <label for="email" class="block text-sm font-medium text-gold mb-1">Email Address <span class="text-red-400">*</span></label>
-            <input type="email" id="email" name="email" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="you@example.com">
-          </div>
-
-          <div>
-            <label for="country" class="block text-sm font-medium text-gold mb-1">Nationality <span class="text-red-400">*</span></label>
-            <select id="country" name="country" required class="w-full rounded-lg border border-gold/30 bg-black/30 text-white px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition appearance-none cursor-pointer" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22%23C6B289%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 1.25rem; padding-right: 2.5rem;">
-              <option value="">Select your nationality</option>
+            <label for="country" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Nationality <span class="text-rose-400/90">*</span></label>
+            <select id="country" name="country" required class="form-select-chevron w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20">
+              <option value="">Choose nationality</option>
             </select>
           </div>
 
-          <div>
-            <label for="experience" class="block text-sm font-medium text-gold mb-1">Tailored Experience</label>
-            <select id="experience" name="experience" class="w-full rounded-lg border border-gold/30 bg-black/30 text-white px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition appearance-none cursor-pointer" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22%23C6B289%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M19 9l-7 7-7-7%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 1.25rem; padding-right: 2.5rem;">
-              <option value="">Select tailored experience</option>
-              <option value="Honey Moon">1. Honey Moon</option>
-              <option value="Anniversaries">2. Anniversaries</option>
-              <option value="Family Tour">3. Family Tour</option>
-              <option value="Groups (friends, work, etc)">4. Groups (friends, work, etc)</option>
-            </select>
-          </div>
+          <div class="border-t border-white/10 pt-6">
+            <p class="mb-4 font-display text-sm font-semibold text-white/95">Experience</p>
+            <div class="space-y-5">
+              <div>
+                <label for="experience" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Type of experience</label>
+                <select id="experience" name="experience" class="form-select-chevron w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20">
+                  <option value="">Select one</option>
+                  <option value="Honey Moon">Honey Moon</option>
+                  <option value="Anniversaries">Anniversaries</option>
+                  <option value="Family Tour">Family Tour</option>
+                  <option value="Groups (friends, work, etc)">Groups (friends, work, etc)</option>
+                </select>
+              </div>
 
-          <div>
-            <label for="people" class="block text-sm font-medium text-gold mb-1">Number of People</label>
-            <input type="number" id="people" name="people" min="1" class="w-full rounded-lg border border-gold/30 bg-black/30 text-white placeholder:text-gold-light/40 px-4 py-3 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition" placeholder="e.g. 2">
-          </div>
+              <div>
+                <label for="people" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Number of travelers</label>
+                <input type="number" id="people" name="people" min="1" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="e.g. 2">
+              </div>
 
-          <div>
-            <label class="block text-sm font-medium text-gold mb-2">Require Airport Pickup and Drop</label>
-            <div class="flex gap-6">
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="airportPickup" value="YES" class="w-4 h-4 text-gold border-gold/50 bg-black focus:ring-gold">
-                <span class="text-gold-light">YES</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="airportPickup" value="NO" checked class="w-4 h-4 text-gold border-gold/50 bg-black focus:ring-gold">
-                <span class="text-gold-light">NO</span>
-              </label>
+              <div>
+                <p class="mb-3 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Airport pickup &amp; drop-off</p>
+                <div class="flex flex-wrap gap-2">
+                  <label class="flex min-w-[7rem] flex-1 cursor-pointer">
+                    <input type="radio" name="airportPickup" value="YES" class="peer sr-only">
+                    <span class="flex w-full items-center justify-center rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-center text-sm font-medium text-white/90 transition peer-checked:border-gold/60 peer-checked:bg-gold/15 peer-checked:text-gold">Yes</span>
+                  </label>
+                  <label class="flex min-w-[7rem] flex-1 cursor-pointer">
+                    <input type="radio" name="airportPickup" value="NO" checked class="peer sr-only">
+                    <span class="flex w-full items-center justify-center rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-center text-sm font-medium text-white/90 transition peer-checked:border-gold/60 peer-checked:bg-gold/15 peer-checked:text-gold">No</span>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="mt-8">
-          <button type="submit" id="submit-btn" class="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white transition-colors">
-            <i data-feather="send" class="w-5 h-5"></i>
-            Submit Request
+          <button type="submit" id="submit-btn" class="flex w-full items-center justify-center gap-2 rounded-full bg-gold py-4 text-base font-semibold text-black shadow-lg shadow-gold/20 transition hover:bg-gold-dark hover:text-white disabled:opacity-60">
+            <i data-feather="send" class="h-5 w-5"></i>
+            Submit request
           </button>
         </div>
       </form>
+
+      <p class="mt-6 text-center text-xs text-gold-light/60"><a href="tailored-tours.html" class="text-gold/80 underline-offset-2 hover:text-gold hover:underline">← Back to tailored experiences</a></p>
     </div>
   </main>
 
@@ -139,7 +149,7 @@
 
       function formatMessage(data) {
         return [
-          '*Tailored Tours Request*',
+          '*Tailored Experiences Request*',
           '',
           'Name: ' + data.name,
           'Phone: ' + data.phone,
@@ -158,7 +168,7 @@
 
         doc.setFontSize(18);
         doc.setTextColor(193, 160, 97);
-        doc.text('Tailored Tours Request', 20, y);
+        doc.text('Tailored Experiences Request', 20, y);
         y += 15;
 
         doc.setFontSize(11);
@@ -194,13 +204,13 @@
         try {
           var doc = generatePDF(data);
           var pdfBlob = doc.output('blob');
-          var fileName = 'Tailored-Tours-Request-' + (data.name || 'form').replace(/\s+/g, '-') + '.pdf';
+          var fileName = 'Tailored-Experiences-Request-' + (data.name || 'form').replace(/\s+/g, '-') + '.pdf';
           var pdfFile = new File([pdfBlob], fileName, { type: 'application/pdf' });
           var msg = formatMessage(data);
 
           if (navigator.share && navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
             navigator.share({
-              title: 'Tailored Tours Request',
+              title: 'Tailored Experiences Request',
               text: msg + '\n\nSend to: +971 55 135 2382',
               files: [pdfFile]
             }).then(function() {
@@ -231,7 +241,7 @@
 
         function resetBtn(b) {
           b.disabled = false;
-          b.innerHTML = '<i data-feather="send" class="w-5 h-5"></i> Submit Request';
+          b.innerHTML = '<i data-feather="send" class="h-5 w-5"></i> Submit request';
           if (window.feather) window.feather.replace();
         }
       });
