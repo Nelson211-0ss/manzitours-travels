@@ -1,0 +1,22 @@
+/* When the user prefers reduced motion, skip entrance animations that start at
+   opacity: 0 — otherwise hero copy and cards can stay invisible. */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .opacity-0-init {
+    opacity: 1;
+  }
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .animate-slow-zoom {
+    animation: none;
+    transform: none;
+  }
+}

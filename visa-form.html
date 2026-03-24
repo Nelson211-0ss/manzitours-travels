@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Google+Sans+Flex:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/scroll-animations.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     .font-display { font-family: 'Fraunces', Georgia, serif; }
@@ -21,6 +22,7 @@
   </style>
 </head>
 <body class="font-sans text-gold-light antialiased bg-black">
+  <script>document.documentElement.classList.add('js-reveal');</script>
   <div id="header-placeholder">
     <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
@@ -31,13 +33,13 @@
     <div class="pointer-events-none fixed inset-0 -z-10 bg-black/65"></div>
 
     <div class="relative z-10 mx-auto max-w-lg px-4 sm:px-6">
-      <div class="mb-8 text-center">
+      <div class="mb-8 text-center" data-reveal="soft">
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold/90">Visa</p>
         <h1 class="font-display mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">Visa assistance request</h1>
         <p class="mt-4 text-sm leading-relaxed text-gold-light/90">A few quick details—we’ll send everything to our team via WhatsApp.</p>
       </div>
 
-      <form id="visa-form-el" class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/40 backdrop-blur-xl md:p-8">
+      <form id="visa-form-el" class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/40 backdrop-blur-xl md:p-8" data-reveal="lift" data-reveal-delay="120">
         <div class="space-y-6">
           <div>
             <label for="name" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Full name <span class="text-rose-400/90">*</span></label>

@@ -25,8 +25,11 @@
     .delay-200 { animation-delay: 200ms; }
     .opacity-0-init { opacity: 0; }
   </style>
+  <link rel="stylesheet" href="css/motion-accessibility.css">
+  <link rel="stylesheet" href="css/scroll-animations.css">
 </head>
 <body class="font-sans text-gold-light antialiased bg-black">
+  <script>document.documentElement.classList.add('js-reveal');</script>
   <div id="header-placeholder">
     <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
@@ -41,6 +44,7 @@
           class="h-full w-full object-cover object-center"
           width="1920"
           height="1080"
+          fetchpriority="high"
           decoding="async"
         />
       </div>
@@ -61,7 +65,7 @@
     <!-- Introduction -->
     <section class="relative border-y border-gold/15 bg-black/90 py-12 md:py-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-3xl text-center">
+        <div class="mx-auto max-w-3xl text-center" data-reveal="soft">
           <h2 class="font-display text-2xl font-bold text-white md:text-3xl">Introduction</h2>
           <p class="mt-4 text-base leading-relaxed text-gold-light md:text-lg">
             Our guided tours are designed to help travelers explore destinations with confidence, comfort, and deeper understanding.
@@ -74,7 +78,7 @@
     <section class="relative py-14 md:py-20">
       <div class="absolute inset-0 bg-gradient-to-b from-black via-deepBlue/30 to-black"></div>
       <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-4xl rounded-3xl border border-gold/20 bg-gradient-to-br from-white/[0.07] to-transparent p-8 shadow-xl shadow-black/50 md:p-10 lg:p-12">
+        <div class="mx-auto max-w-4xl rounded-3xl border border-gold/20 bg-gradient-to-br from-white/[0.07] to-transparent p-8 shadow-xl shadow-black/50 md:p-10 lg:p-12" data-reveal="zoom">
           <h2 class="font-display text-xl font-bold text-gold md:text-2xl">Description</h2>
           <p class="mt-4 text-lg leading-relaxed text-gold-light/95 md:text-xl">
             We focus on creating engaging experiences where travelers can not only see famous landmarks but also discover unique local culture, traditions, and attractions. From city explorations to nature adventures, each tour is designed to be comfortable, safe, and enriching.
@@ -87,13 +91,13 @@
     <section class="relative pb-16 md:pb-24">
       <div class="absolute inset-0 bg-gradient-to-b from-transparent via-deepBlue/40 to-black"></div>
       <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
+        <div class="mx-auto max-w-2xl text-center" data-reveal="fade">
           <h2 class="font-display text-3xl font-bold text-white md:text-4xl">What we offer</h2>
           <p class="mt-3 text-gold-light">Ways to see, learn, and experience more</p>
         </div>
 
         <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10">
+          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10" data-reveal="lift" data-reveal-delay="0">
             <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gold/15 text-gold ring-1 ring-gold/25 transition-colors group-hover:bg-gold/25">
               <i data-feather="camera" class="h-5 w-5" aria-hidden="true"></i>
             </div>
@@ -101,7 +105,7 @@
             <p class="mt-2 text-sm leading-relaxed text-gold-light/90">Iconic landmarks and must-see stops with clear pacing and local context.</p>
           </article>
 
-          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10">
+          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10" data-reveal="lift" data-reveal-delay="90">
             <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gold/15 text-gold ring-1 ring-gold/25 transition-colors group-hover:bg-gold/25">
               <i data-feather="book-open" class="h-5 w-5" aria-hidden="true"></i>
             </div>
@@ -109,7 +113,7 @@
             <p class="mt-2 text-sm leading-relaxed text-gold-light/90">Stories, heritage sites, and traditions that bring each place to life.</p>
           </article>
 
-          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10">
+          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10" data-reveal="lift" data-reveal-delay="180">
             <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gold/15 text-gold ring-1 ring-gold/25 transition-colors group-hover:bg-gold/25">
               <i data-feather="compass" class="h-5 w-5" aria-hidden="true"></i>
             </div>
@@ -117,7 +121,7 @@
             <p class="mt-2 text-sm leading-relaxed text-gold-light/90">Outdoor routes and active days planned with safety and comfort in mind.</p>
           </article>
 
-          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10">
+          <article class="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white/[0.06] to-transparent p-6 shadow-lg shadow-black/40 transition-all duration-300 hover:border-gold/45 hover:shadow-gold/10" data-reveal="lift" data-reveal-delay="270">
             <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-gold/15 text-gold ring-1 ring-gold/25 transition-colors group-hover:bg-gold/25">
               <i data-feather="sliders" class="h-5 w-5" aria-hidden="true"></i>
             </div>
@@ -126,7 +130,7 @@
           </article>
         </div>
 
-        <div class="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+        <div class="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6" data-reveal="tilt">
           <a href="guided-tours-form.html" class="inline-flex w-full items-center justify-center rounded-full bg-gold px-10 py-4 text-base font-semibold text-black shadow-lg shadow-gold/20 transition hover:bg-gold-dark hover:text-white sm:w-auto">
             Book a guided tour
           </a>

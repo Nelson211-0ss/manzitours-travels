@@ -1,0 +1,113 @@
+/**
+ * Scroll reveals — html.js-reveal on <html>, js/load-components.js runs the observer.
+ * data-reveal: up | left | right | zoom | fade | soft | tilt | lift
+ * data-reveal-delay: ms (stagger)
+ */
+
+:root {
+  --reveal-duration: 0.95s;
+  --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+html.js-reveal [data-reveal] {
+  transition:
+    opacity var(--reveal-duration) var(--reveal-ease),
+    transform var(--reveal-duration) var(--reveal-ease),
+    filter var(--reveal-duration) var(--reveal-ease),
+    box-shadow var(--reveal-duration) var(--reveal-ease);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+html.js-reveal [data-reveal]:not(.is-revealed) {
+  opacity: 0;
+  transform: translate3d(0, 2.25rem, 0) scale(0.97);
+  filter: none;
+  box-shadow: none;
+}
+
+html.js-reveal [data-reveal].is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: none;
+  will-change: auto;
+}
+
+/* Directional */
+html.js-reveal [data-reveal="left"]:not(.is-revealed) {
+  transform: translate3d(-2.25rem, 0, 0) scale(0.98);
+}
+
+html.js-reveal [data-reveal="right"]:not(.is-revealed) {
+  transform: translate3d(2.25rem, 0, 0) scale(0.98);
+}
+
+html.js-reveal [data-reveal="zoom"]:not(.is-revealed) {
+  transform: scale(0.91) translate3d(0, 1.5rem, 0);
+}
+
+html.js-reveal [data-reveal="zoom"].is-revealed {
+  transform: scale(1) translate3d(0, 0, 0);
+}
+
+html.js-reveal [data-reveal="fade"]:not(.is-revealed) {
+  transform: none;
+}
+
+html.js-reveal [data-reveal="fade"].is-revealed {
+  transform: none;
+}
+
+/* Blur + rise — editorial “focus in” */
+html.js-reveal [data-reveal="soft"]:not(.is-revealed) {
+  filter: blur(14px);
+  transform: translate3d(0, 1.75rem, 0) scale(0.96);
+}
+
+html.js-reveal [data-reveal="soft"].is-revealed {
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Slight rotation unwind */
+html.js-reveal [data-reveal="tilt"]:not(.is-revealed) {
+  transform: translate3d(0, 2rem, 0) rotate(-2deg) scale(0.97);
+}
+
+html.js-reveal [data-reveal="tilt"].is-revealed {
+  transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+}
+
+/* Rises with a soft gold wash shadow */
+html.js-reveal [data-reveal="lift"]:not(.is-revealed) {
+  transform: translate3d(0, 2.5rem, 0) scale(0.96);
+  box-shadow: 0 0 0 transparent;
+}
+
+html.js-reveal [data-reveal="lift"].is-revealed {
+  transform: translate3d(0, 0, 0) scale(1);
+  box-shadow:
+    0 24px 48px -20px rgba(0, 0, 0, 0.55),
+    0 0 60px -30px rgba(193, 160, 97, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.js-reveal [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: inherit !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+}

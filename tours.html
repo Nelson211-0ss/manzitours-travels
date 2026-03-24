@@ -17,8 +17,11 @@
     .font-display { font-family: 'Fraunces', Georgia, serif; }
     .font-sans { font-family: 'Google Sans Flex', system-ui, sans-serif; }
   </style>
+  <link rel="stylesheet" href="css/motion-accessibility.css">
+  <link rel="stylesheet" href="css/scroll-animations.css">
 </head>
 <body class="font-sans text-gold-light antialiased bg-black">
+  <script>document.documentElement.classList.add('js-reveal');</script>
   <div id="header-placeholder">
     <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
@@ -29,7 +32,7 @@
       <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80" alt="" width="1920" height="1080" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center">
       <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/40"></div>
-      <div class="relative z-10 mx-auto flex min-h-[36vh] max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8 md:min-h-[40vh]">
+      <div class="relative z-10 mx-auto flex min-h-[36vh] max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8 md:min-h-[40vh]" data-reveal="soft">
         <p class="text-gold font-medium tracking-[0.2em] uppercase text-sm">Adventures</p>
         <h1 class="font-display mt-2 text-4xl font-bold text-white md:text-5xl lg:text-6xl">Our Tours</h1>
         <p class="mt-4 max-w-2xl text-lg text-gold-light/95">Join our best-selling tours designed for comfort, discovery, and lasting memories across the UAE and beyond.</p>
@@ -40,7 +43,7 @@
     <section class="py-16 md:py-24 bg-deepBlue">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300">
+          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300" data-reveal="lift" data-reveal-delay="0">
             <div class="relative aspect-[5/3] w-full overflow-hidden bg-black">
               <img src="https://images.unsplash.com/photo-1602770004545-e8f53c82fdce?w=800&q=80" alt="Desert safari dunes" width="800" height="480" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover hover:scale-105 transition-transform duration-500">
             </div>
@@ -52,7 +55,7 @@
               <a href="contact.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light">Book this tour →</a>
             </div>
           </div>
-          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300">
+          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300" data-reveal="lift" data-reveal-delay="80">
             <div class="relative aspect-[5/3] w-full overflow-hidden bg-black">
               <img src="https://images.unsplash.com/photo-1748373448914-1d7f882700e2?w=800&q=80" alt="Burj Khalifa and Dubai downtown" width="800" height="480" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover hover:scale-105 transition-transform duration-500">
             </div>
@@ -64,7 +67,7 @@
               <a href="contact.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light">Book this tour →</a>
             </div>
           </div>
-          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300">
+          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300" data-reveal="lift" data-reveal-delay="160">
             <div class="relative aspect-[5/3] w-full overflow-hidden bg-black">
               <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=800&q=80" alt="Grand mosque and Islamic architecture" width="800" height="480" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover hover:scale-105 transition-transform duration-500">
             </div>
@@ -76,7 +79,7 @@
               <a href="contact.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light">Book this tour →</a>
             </div>
           </div>
-          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300">
+          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300" data-reveal="lift" data-reveal-delay="240">
             <div class="relative aspect-[5/3] w-full overflow-hidden bg-black">
               <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80" alt="Mountain hiking trail" width="800" height="480" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover hover:scale-105 transition-transform duration-500">
             </div>
@@ -88,7 +91,7 @@
               <a href="contact.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light">Book this tour →</a>
             </div>
           </div>
-          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300">
+          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300" data-reveal="lift" data-reveal-delay="320">
             <div class="relative aspect-[5/3] w-full overflow-hidden bg-black">
               <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Tropical beach and ocean" width="800" height="480" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover hover:scale-105 transition-transform duration-500">
             </div>
@@ -100,7 +103,7 @@
               <a href="contact.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light">Book this tour →</a>
             </div>
           </div>
-          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 md:col-span-2 lg:col-span-1">
+          <div class="rounded-2xl border border-gold/30 overflow-hidden bg-black/50 hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 md:col-span-2 lg:col-span-1" data-reveal="tilt" data-reveal-delay="120">
             <div class="relative aspect-[5/3] w-full overflow-hidden bg-black">
               <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80" alt="Travel planning with map and camera" width="800" height="480" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover hover:scale-105 transition-transform duration-500">
             </div>

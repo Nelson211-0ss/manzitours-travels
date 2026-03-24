@@ -74,3 +74,54 @@
 
   if (window.feather) window.feather.replace();
 })();
+
+/** Scroll-triggered [data-reveal] — pairs with css/scroll-animations.css and html.js-reveal */
+(function () {
+  function initReveal() {
+    var nodes = document.querySelectorAll('[data-reveal]');
+    if (!nodes.length) return;
+
+    function reveal(el) {
+      el.classList.add('is-revealed');
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      nodes.forEach(reveal);
+      return;
+    }
+
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(reveal);
+      return;
+    }
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          io.unobserve(el);
+          var ms = parseInt(el.getAttribute('data-reveal-delay'), 10);
+          if (ms > 0) {
+            window.setTimeout(function () {
+              reveal(el);
+            }, ms);
+          } else {
+            reveal(el);
+          }
+        });
+      },
+      { root: null, rootMargin: '0px 0px -6% 0px', threshold: 0.06 }
+    );
+
+    nodes.forEach(function (el) {
+      io.observe(el);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReveal);
+  } else {
+    initReveal();
+  }
+})();

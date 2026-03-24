@@ -54,13 +54,6 @@
     .animate-fade-in-up {
       animation: fade-in-up 0.7s ease-out forwards;
     }
-    @media (prefers-reduced-motion: reduce) {
-      .animate-fade-in-up {
-        animation: none;
-        opacity: 1;
-        transform: none;
-      }
-    }
     .animate-delay-100 { animation-delay: 100ms; }
     .animate-delay-200 { animation-delay: 200ms; }
     .animate-delay-300 { animation-delay: 300ms; }
@@ -71,8 +64,11 @@
     .hero-slide.active { opacity: 1; z-index: 1; }
     .hero-slide:not(.active) { opacity: 0; z-index: 0; pointer-events: none; }
   </style>
+  <link rel="stylesheet" href="css/motion-accessibility.css">
+  <link rel="stylesheet" href="css/scroll-animations.css">
 </head>
 <body class="font-sans text-gold-light antialiased bg-black">
+  <script>document.documentElement.classList.add('js-reveal');</script>
   <div id="header-placeholder">
     <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center">
       <span class="text-gold-light">Loading…</span>
@@ -125,41 +121,41 @@
     <!-- Our Services -->
     <section id="services" class="py-16 md:py-24 bg-black scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto animate-fade-in-up">
+        <div class="text-center max-w-2xl mx-auto" data-reveal="soft">
           <p class="text-gold font-semibold uppercase tracking-wider text-sm">What we offer</p>
           <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">Our Services</h2>
           <p class="mt-4 text-gold-light">Visa assistance, flights, hotels, tailored itineraries, and expert-led UAE tours—all in one place.</p>
         </div>
         <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
-          <a href="visa-assistance.html" class="rounded-2xl border border-gold/30 p-6 text-center hover:border-gold hover:shadow-lg hover:shadow-gold/10 transition-all duration-300 animate-fade-in-up animate-delay-100 bg-black/50 block">
+          <a href="visa-assistance.html" class="rounded-2xl border border-gold/30 p-6 text-center hover:border-gold hover:shadow-lg hover:shadow-gold/10 transition-all duration-300 bg-black/50 block" data-reveal="lift" data-reveal-delay="0">
             <div class="w-12 h-12 rounded-full bg-gold/20 text-gold flex items-center justify-center mx-auto">
               <i data-feather="file-text" class="w-6 h-6"></i>
             </div>
             <h3 class="font-display text-lg font-bold text-white mt-4">Visa assistance</h3>
             <p class="mt-2 text-gold-light text-sm">We simplify the visa application process—inquire about visa requirements for different countries.</p>
           </a>
-          <a href="flight-booking.html" class="rounded-2xl border border-gold/30 p-6 text-center hover:border-gold hover:shadow-lg hover:shadow-gold/10 transition-all duration-300 animate-fade-in-up animate-delay-200 bg-black/50 block">
+          <a href="flight-booking.html" class="rounded-2xl border border-gold/30 p-6 text-center hover:border-gold hover:shadow-lg hover:shadow-gold/10 transition-all duration-300 bg-black/50 block" data-reveal="lift" data-reveal-delay="70">
             <div class="w-12 h-12 rounded-full bg-gold/20 text-gold flex items-center justify-center mx-auto">
               <i data-feather="send" class="w-6 h-6"></i>
             </div>
             <h3 class="font-display text-lg font-bold text-white mt-4">Flight booking</h3>
             <p class="mt-2 text-gold-light text-sm">Book your favorite flight all year round. We give you a hassle-free experience.</p>
           </a>
-          <a href="hotel-assistance.html" class="rounded-2xl border border-gold/30 p-6 text-center hover:border-gold hover:shadow-lg hover:shadow-gold/10 transition-all duration-300 animate-fade-in-up animate-delay-300 bg-black/50 block">
+          <a href="hotel-assistance.html" class="rounded-2xl border border-gold/30 p-6 text-center hover:border-gold hover:shadow-lg hover:shadow-gold/10 transition-all duration-300 bg-black/50 block" data-reveal="lift" data-reveal-delay="140">
             <div class="w-12 h-12 rounded-full bg-gold/20 text-gold flex items-center justify-center mx-auto">
               <i data-feather="home" class="w-6 h-6"></i>
             </div>
             <h3 class="font-display text-lg font-bold text-white mt-4">Hotel bookings</h3>
             <p class="mt-2 text-gold-light text-sm">We offer a range of accommodation options to suit every budget and preference.</p>
           </a>
-          <a href="tailored-tours.html" class="rounded-2xl border border-gold/30 p-6 text-center hover:border-gold hover:shadow-lg hover:shadow-gold/10 transition-all duration-300 animate-fade-in-up animate-delay-400 bg-black/50 block">
+          <a href="tailored-tours.html" class="rounded-2xl border border-gold/30 p-6 text-center hover:border-gold hover:shadow-lg hover:shadow-gold/10 transition-all duration-300 bg-black/50 block" data-reveal="lift" data-reveal-delay="210">
             <div class="w-12 h-12 rounded-full bg-gold/20 text-gold flex items-center justify-center mx-auto">
               <i data-feather="map" class="w-6 h-6"></i>
             </div>
             <h3 class="font-display text-lg font-bold text-white mt-4">Tailored experiences</h3>
             <p class="mt-2 text-gold-light text-sm">Let us customize your travel itinerary to create unforgettable memories in the UAE.</p>
           </a>
-          <a href="guided-destinations.html" class="rounded-2xl border border-gold/30 p-6 text-center hover:border-gold hover:shadow-lg hover:shadow-gold/10 transition-all duration-300 sm:col-span-2 lg:col-span-1 animate-fade-in-up animate-delay-500 bg-black/50 block">
+          <a href="guided-destinations.html" class="rounded-2xl border border-gold/30 p-6 text-center hover:border-gold hover:shadow-lg hover:shadow-gold/10 transition-all duration-300 sm:col-span-2 lg:col-span-1 bg-black/50 block" data-reveal="lift" data-reveal-delay="280">
             <div class="w-12 h-12 rounded-full bg-gold/20 text-gold flex items-center justify-center mx-auto">
               <i data-feather="navigation" class="w-6 h-6"></i>
             </div>
@@ -173,13 +169,13 @@
     <!-- Destinations -->
     <section id="destinations" class="py-16 md:py-24 bg-deepBlue scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto animate-fade-in-up">
+        <div class="text-center max-w-2xl mx-auto" data-reveal="soft">
           <p class="text-gold font-semibold uppercase tracking-wider text-sm">Destinations</p>
           <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">Our Destinations</h2>
           <p class="mt-4 text-gold-light">Iconic towers, golden dunes, and five-star UAE moments—start planning where you'll go next.</p>
         </div>
         <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          <a href="destinations.html" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 aspect-[4/3] block animate-fade-in-up animate-delay-100 border border-gold/20">
+          <a href="destinations.html" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 aspect-[4/3] block border border-gold/20" data-reveal="zoom" data-reveal-delay="0">
             <img src="https://images.unsplash.com/photo-1748373448914-1d7f882700e2?w=800&q=80" alt="Burj Khalifa and Dubai cityscape" width="800" height="600" loading="lazy" decoding="async" class="h-full w-full min-h-[12rem] object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -188,7 +184,7 @@
               <span class="mt-3 inline-block text-gold font-semibold group-hover:text-gold-light">Explore →</span>
             </div>
           </a>
-          <a href="destinations.html" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 aspect-[4/3] block animate-fade-in-up animate-delay-200 border border-gold/20">
+          <a href="destinations.html" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 aspect-[4/3] block border border-gold/20" data-reveal="zoom" data-reveal-delay="80">
             <img src="https://images.unsplash.com/photo-1602770004545-e8f53c82fdce?w=800&q=80" alt="Desert dunes and adventure" width="800" height="600" loading="lazy" decoding="async" class="h-full w-full min-h-[12rem] object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -197,7 +193,7 @@
               <span class="mt-3 inline-block text-gold font-semibold group-hover:text-gold-light">Explore →</span>
             </div>
           </a>
-          <a href="destinations.html" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 aspect-[4/3] sm:col-span-2 lg:col-span-1 block animate-fade-in-up animate-delay-300 border border-gold/20">
+          <a href="destinations.html" class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-gold/10 transition-all duration-300 aspect-[4/3] sm:col-span-2 lg:col-span-1 block border border-gold/20" data-reveal="zoom" data-reveal-delay="160">
             <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80" alt="Yacht on turquoise water" width="800" height="600" loading="lazy" decoding="async" class="h-full w-full min-h-[12rem] object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -207,7 +203,7 @@
             </div>
           </a>
         </div>
-        <div class="mt-8 text-center">
+        <div class="mt-8 text-center" data-reveal="fade">
           <a href="destinations.html" class="inline-flex items-center text-gold font-semibold hover:text-gold-light">View all destinations →</a>
         </div>
       </div>
@@ -216,13 +212,13 @@
     <!-- Featured Tours -->
     <section id="tours" class="py-16 md:py-24 bg-black scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto animate-fade-in-up">
+        <div class="text-center max-w-2xl mx-auto" data-reveal="soft">
           <p class="text-gold font-semibold uppercase tracking-wider text-sm">Tours</p>
           <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">Popular Adventures</h2>
           <p class="mt-4 text-gold-light">Join our best-selling tours designed for comfort, discovery, and lasting memories.</p>
         </div>
         <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="rounded-2xl border border-gold/30 overflow-hidden hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 animate-fade-in-up animate-delay-100 bg-black/50">
+          <div class="rounded-2xl border border-gold/30 overflow-hidden hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 bg-black/50" data-reveal="right" data-reveal-delay="0">
             <div class="aspect-[5/3] overflow-hidden">
               <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80" alt="Golden desert dunes at sunset" width="800" height="480" loading="lazy" decoding="async" class="h-full w-full min-h-[10rem] object-cover hover:scale-105 transition-transform duration-500">
             </div>
@@ -234,7 +230,7 @@
               <a href="contact.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light">Book this tour →</a>
             </div>
           </div>
-          <div class="rounded-2xl border border-gold/30 overflow-hidden hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 animate-fade-in-up animate-delay-200 bg-black/50">
+          <div class="rounded-2xl border border-gold/30 overflow-hidden hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 bg-black/50" data-reveal="up" data-reveal-delay="80">
             <div class="aspect-[5/3] overflow-hidden">
               <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=80" alt="Dubai skyline and marina" width="800" height="480" loading="lazy" decoding="async" class="h-full w-full min-h-[10rem] object-cover hover:scale-105 transition-transform duration-500">
             </div>
@@ -246,7 +242,7 @@
               <a href="contact.html" class="mt-4 inline-block text-gold font-semibold hover:text-gold-light">Book this tour →</a>
             </div>
           </div>
-          <div class="rounded-2xl border border-gold/30 overflow-hidden hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 md:col-span-2 lg:col-span-1 animate-fade-in-up animate-delay-300 bg-black/50">
+          <div class="rounded-2xl border border-gold/30 overflow-hidden hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 md:col-span-2 lg:col-span-1 bg-black/50" data-reveal="left" data-reveal-delay="160">
             <div class="aspect-[5/3] overflow-hidden">
               <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=800&q=80" alt="Grand mosque and Islamic architecture" width="800" height="480" loading="lazy" decoding="async" class="h-full w-full min-h-[10rem] object-cover hover:scale-105 transition-transform duration-500">
             </div>
@@ -259,7 +255,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-8 text-center">
+        <div class="mt-8 text-center" data-reveal="fade">
           <a href="tours.html" class="inline-flex items-center text-gold font-semibold hover:text-gold-light">View all tours →</a>
         </div>
       </div>
@@ -269,7 +265,7 @@
     <section id="about" class="py-16 md:py-24 bg-deepBlue text-gold-light scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div class="animate-fade-in-up">
+          <div data-reveal="right">
             <p class="text-gold font-semibold uppercase tracking-wider text-sm">About Us</p>
             <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">We Craft Journeys You'll Remember</h2>
             <p class="mt-6 text-gold-light leading-relaxed">
@@ -283,7 +279,7 @@
             </ul>
             <a href="about.html" class="mt-8 inline-flex items-center text-gold font-semibold hover:text-gold-light">Learn more about us →</a>
           </div>
-          <div class="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:min-h-[400px] animate-fade-in-up animate-delay-200 border border-gold/20">
+          <div class="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:min-h-[400px] border border-gold/20" data-reveal="left" data-reveal-delay="100">
             <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80" alt="Luxury resort pool and hospitality" width="800" height="600" loading="lazy" decoding="async" class="h-full w-full min-h-[16rem] object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
           </div>
@@ -294,7 +290,7 @@
     <!-- CTA / Contact -->
     <section id="contact" class="py-16 md:py-24 bg-black scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mx-auto text-center animate-fade-in-up">
+        <div class="max-w-2xl mx-auto text-center" data-reveal="tilt">
           <p class="text-gold font-semibold uppercase tracking-wider text-sm">Contact</p>
           <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">Start Your Adventure</h2>
           <p class="mt-4 text-gold-light">Tell us your dates and preferences—we'll tailor a trip just for you.</p>

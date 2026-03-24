@@ -17,8 +17,11 @@
     .font-display { font-family: 'Fraunces', Georgia, serif; }
     .font-sans { font-family: 'Google Sans Flex', system-ui, sans-serif; }
   </style>
+  <link rel="stylesheet" href="css/motion-accessibility.css">
+  <link rel="stylesheet" href="css/scroll-animations.css">
 </head>
 <body class="font-sans text-gold-light antialiased bg-black">
+  <script>document.documentElement.classList.add('js-reveal');</script>
   <div id="header-placeholder">
     <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
@@ -31,7 +34,7 @@
       <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black/40"></div>
       <div class="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full bg-gold/10 blur-[100px]"></div>
       <div class="pointer-events-none absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-deepBlue-light/20 blur-[90px]"></div>
-      <div class="relative z-10 mx-auto flex max-w-7xl flex-col justify-end px-4 sm:px-6 lg:px-8">
+      <div class="relative z-10 mx-auto flex max-w-7xl flex-col justify-end px-4 sm:px-6 lg:px-8" data-reveal="soft">
         <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold/90">Our story</p>
         <h1 class="font-display mt-3 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-6xl">
           Honzi Tours <span class="text-gold italic">&amp;</span> Travels
@@ -53,19 +56,19 @@
     <!-- Stats strip -->
     <section class="relative z-20 -mt-6 border-y border-gold/10 bg-deepBlue/90 px-4 py-10 backdrop-blur-xl sm:px-6 lg:px-8">
       <div class="mx-auto grid max-w-7xl grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
-        <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:text-left">
+        <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:text-left" data-reveal="up" data-reveal-delay="0">
           <p class="font-display text-2xl font-bold text-gold md:text-3xl">UAE</p>
           <p class="mt-1 text-xs uppercase tracking-wider text-gold-light/70">Home base</p>
         </div>
-        <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:text-left">
+        <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:text-left" data-reveal="up" data-reveal-delay="70">
           <p class="font-display text-2xl font-bold text-white md:text-3xl">24/7</p>
           <p class="mt-1 text-xs uppercase tracking-wider text-gold-light/70">Trip support</p>
         </div>
-        <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:text-left">
+        <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:text-left" data-reveal="up" data-reveal-delay="140">
           <p class="font-display text-2xl font-bold text-white md:text-3xl">Groups</p>
           <p class="mt-1 text-xs uppercase tracking-wider text-gold-light/70">&amp; private</p>
         </div>
-        <div class="col-span-2 rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:col-span-1 md:text-left">
+        <div class="col-span-2 rounded-2xl border border-white/5 bg-white/[0.03] p-5 text-center md:col-span-1 md:text-left" data-reveal="up" data-reveal-delay="210">
           <p class="font-display text-2xl font-bold text-white md:text-3xl">Tailored</p>
           <p class="mt-1 text-xs uppercase tracking-wider text-gold-light/70">Itineraries</p>
         </div>
@@ -77,7 +80,7 @@
       <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black via-deepBlue/40 to-black"></div>
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <div>
+          <div data-reveal="right">
             <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold/90">About us</p>
             <h2 class="font-display mt-2 text-3xl font-bold text-white md:text-4xl">Who we are</h2>
             <p class="mt-6 leading-relaxed text-gold-light/95">
@@ -105,7 +108,7 @@
               </li>
             </ul>
           </div>
-          <div class="relative">
+          <div class="relative" data-reveal="left" data-reveal-delay="80">
             <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-gold/20 via-transparent to-deepBlue-light/20 opacity-60 blur-2xl"></div>
             <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-black/50 backdrop-blur-sm">
               <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=900&q=80" alt="Open road and travel adventure" width="900" height="675" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover">
@@ -120,27 +123,27 @@
     <!-- Values -->
     <section class="border-t border-gold/10 py-16 md:py-24">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
+        <div class="mx-auto max-w-2xl text-center" data-reveal="soft">
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold/90">Our values</p>
           <h2 class="font-display mt-2 text-3xl font-bold text-white md:text-4xl">What we stand for</h2>
           <p class="mt-4 text-sm leading-relaxed text-gold-light/80 md:text-base">Principles that shape every itinerary and every conversation with our guests.</p>
         </div>
         <div class="mt-12 grid gap-6 md:grid-cols-3">
-          <article class="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-8 transition hover:border-gold/35 hover:shadow-lg hover:shadow-gold/5">
+          <article class="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-8 transition hover:border-gold/35 hover:shadow-lg hover:shadow-gold/5" data-reveal="up" data-reveal-delay="0">
             <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold transition group-hover:bg-gold/25">
               <i data-feather="compass" class="h-6 w-6"></i>
             </div>
             <h3 class="font-display mt-5 text-xl font-bold text-white">Authenticity</h3>
             <p class="mt-3 text-sm leading-relaxed text-gold-light/85">Real encounters with people and places—experiences that feel genuine, not staged.</p>
           </article>
-          <article class="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-8 transition hover:border-gold/35 hover:shadow-lg hover:shadow-gold/5">
+          <article class="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-8 transition hover:border-gold/35 hover:shadow-lg hover:shadow-gold/5" data-reveal="up" data-reveal-delay="90">
             <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold transition group-hover:bg-gold/25">
               <i data-feather="globe" class="h-6 w-6"></i>
             </div>
             <h3 class="font-display mt-5 text-xl font-bold text-white">Sustainability</h3>
             <p class="mt-3 text-sm leading-relaxed text-gold-light/85">We aim to minimize impact and support conservation and local economies where we travel.</p>
           </article>
-          <article class="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-8 transition hover:border-gold/35 hover:shadow-lg hover:shadow-gold/5">
+          <article class="group rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-8 transition hover:border-gold/35 hover:shadow-lg hover:shadow-gold/5" data-reveal="up" data-reveal-delay="180">
             <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold transition group-hover:bg-gold/25">
               <i data-feather="heart" class="h-6 w-6"></i>
             </div>
@@ -156,7 +159,7 @@
       <div class="absolute inset-0 bg-gradient-to-br from-deepBlue via-black to-deepBlue-dark"></div>
       <div class="pointer-events-none absolute inset-0 bg-[url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80')] bg-cover bg-center opacity-20"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
-      <div class="relative z-10 mx-auto max-w-3xl px-4 text-center sm:px-6">
+      <div class="relative z-10 mx-auto max-w-3xl px-4 text-center sm:px-6" data-reveal="zoom">
         <h2 class="font-display text-3xl font-bold text-white md:text-4xl">Ready to explore with us?</h2>
         <p class="mt-4 text-gold-light/85">Tell us your dream trip—we’ll shape the details and handle the rest.</p>
         <a href="contact.html" class="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-10 py-4 text-sm font-semibold text-black transition hover:bg-gold-dark hover:text-white">
