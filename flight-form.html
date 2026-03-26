@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/logo.png" type="image/png">
   <title>Flight Booking Request – Honzi Tours &amp; Travel</title>
   <meta name="description" content="Submit your flight booking request. We'll find the best fares and routes for your trip.">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -49,7 +49,7 @@
           <div class="grid gap-5 sm:grid-cols-2">
             <div>
               <label for="phone" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Phone <span class="text-rose-400/90">*</span></label>
-              <input type="tel" id="phone" name="phone" required class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="+256 …" autocomplete="tel">
+              <input type="tel" id="phone" name="phone" required class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="+971 …" autocomplete="tel">
             </div>
             <div>
               <label for="email" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Email <span class="text-rose-400/90">*</span></label>
@@ -131,7 +131,7 @@
   <script src="js/countries.js"></script>
   <script>
     (function() {
-      var WHATSAPP_NUMBER = '256785756069';
+      var WHATSAPP_NUMBER = '971551352382';
 
       function populateCountries() {
         var select = document.getElementById('country');
@@ -229,7 +229,7 @@
           if (navigator.share && navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
             navigator.share({
               title: 'Flight Booking Request',
-              text: msg + '\n\nSend to: +256 785 756069',
+              text: msg + '\n\nSend to: +971 55 135 2382',
               files: [pdfFile]
             }).then(function() {
               window.open('https://wa.me/' + WHATSAPP_NUMBER, '_blank');

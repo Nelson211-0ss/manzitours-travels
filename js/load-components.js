@@ -54,6 +54,12 @@
     }
   }
 
+  function setFooterYear() {
+    var yearEl = document.getElementById('footer-year');
+    if (!yearEl) return;
+    yearEl.textContent = String(new Date().getFullYear());
+  }
+
   if (headerPlaceholder) {
     fetch(headerPath)
       .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
@@ -66,7 +72,10 @@
   if (footerPlaceholder) {
     fetch(footerPath)
       .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
-      .then(function (html) { inject(footerPlaceholder, html); })
+      .then(function (html) {
+        inject(footerPlaceholder, html);
+        setFooterYear();
+      })
       .catch(function () {
         footerPlaceholder.innerHTML = '<p class="p-4 text-center text-stone-500">Footer could not be loaded.</p>';
       });
