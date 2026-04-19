@@ -63,8 +63,6 @@
     .hero-slide { transition: opacity 1.2s ease-in-out; }
     .hero-slide.active { opacity: 1; z-index: 1; }
     .hero-slide:not(.active) { opacity: 0; z-index: 0; pointer-events: none; }
-    /* Full building visible (no aggressive crop) */
-    .hero-slide--contain { object-fit: contain; object-position: center; background: #000; }
   </style>
   <link rel="stylesheet" href="css/motion-accessibility.css">
   <link rel="stylesheet" href="css/scroll-animations.css">
@@ -86,13 +84,12 @@
         <img src="Photos/Dubai%20City%20Tour.jpg" alt="Dubai city tour and skyline" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="2">
         <img src="Photos/Marina%20Expe.jpg" alt="Dubai marina and waterfront" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="3">
         <img src="Photos/Marina%20experience.jpeg" alt="Marina yachts and waterfront living" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="4">
-        <img src="Photos/Burj%20Khalifa.jpeg" alt="Burj Khalifa, full tower, Dubai" class="hero-slide hero-slide--contain absolute inset-0 h-full w-full" data-slide="5">
-        <img src="Photos/museum%20if%20the%20future.jpeg" alt="Museum of the Future, Dubai" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="6">
-        <img src="Photos/Culture.jpeg" alt="UAE culture and heritage" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="7">
-        <img src="Photos/Miracle%20Gardens.jpeg" alt="Dubai Miracle Garden" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="8">
-        <img src="Photos/abudabi.jpeg" alt="Abu Dhabi landmarks" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="9">
-        <img src="Photos/Highland%20and%20treking.jpg" alt="Highland trekking and mountain views" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="10">
-        <img src="Photos/Jebel%20Jais%20-%20Ras%20Al%20Khaimah.jpeg" alt="Jebel Jais mountains, Ras Al Khaimah" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="11">
+        <img src="Photos/museum%20if%20the%20future.jpeg" alt="Museum of the Future, Dubai" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="5">
+        <img src="Photos/Culture.jpeg" alt="UAE culture and heritage" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="6">
+        <img src="Photos/Miracle%20Gardens.jpeg" alt="Dubai Miracle Garden" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="7">
+        <img src="Photos/abudabi.jpeg" alt="Abu Dhabi landmarks" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="8">
+        <img src="Photos/Highland%20and%20treking.jpg" alt="Highland trekking and mountain views" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="9">
+        <img src="Photos/Jebel%20Jais%20-%20Ras%20Al%20Khaimah.jpeg" alt="Jebel Jais mountains, Ras Al Khaimah" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="10">
       </div>
       <!-- Dark overlay + left emphasis so headline and CTAs stay readable on any slide -->
       <div class="absolute inset-0 z-10 pointer-events-none bg-black/45"></div>
