@@ -85,16 +85,17 @@
         <img src="Photos/Marina%20Expe.jpg" alt="Dubai marina and waterfront" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="1">
         <img src="Photos/Burj%20Khalifa.jpeg" alt="Burj Khalifa, full tower, Dubai" class="hero-slide hero-slide--contain absolute inset-0 h-full w-full" data-slide="2">
       </div>
-      <!-- Stronger read-through on the right/center so slides read clearly; left rail for typography -->
-      <div class="absolute inset-0 z-10 pointer-events-none" style="background: linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(15,23,42,0.55) 32%, rgba(0,0,0,0.18) 52%, rgba(0,0,0,0.12) 100%), linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 25%, transparent 70%, rgba(0,0,0,0.5) 100%);"></div>
+      <!-- Dark overlay + left emphasis so headline and CTAs stay readable on any slide -->
+      <div class="absolute inset-0 z-10 pointer-events-none bg-black/35"></div>
+      <div class="absolute inset-0 z-10 pointer-events-none" style="background: linear-gradient(105deg, rgba(0,0,0,0.88) 0%, rgba(15,23,42,0.72) 26%, rgba(0,0,0,0.5) 44%, rgba(0,0,0,0.22) 62%, rgba(0,0,0,0.14) 100%), linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.12) 22%, transparent 38%, transparent 68%, rgba(0,0,0,0.5) 100%);"></div>
 
       <div class="relative z-20 flex min-h-[100dvh] min-h-screen w-full flex-col justify-center pb-32 md:pb-36 pt-[calc(4rem+env(safe-area-inset-top))] md:pt-[calc(5rem+env(safe-area-inset-top))]">
         <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="max-w-xl text-left lg:max-w-2xl">
-            <h1 class="font-display font-bold text-white leading-[1.1] tracking-tight animate-fade-in-up animate-delay-100 drop-shadow-lg text-[clamp(1.05rem,0.65rem+2.1vw,4.5rem)] whitespace-nowrap" style="text-shadow: 0 2px 20px rgba(0,0,0,0.55), 0 4px 40px rgba(0,0,0,0.35);">
+            <h1 class="font-display font-bold text-white leading-[1.1] tracking-tight animate-fade-in-up animate-delay-100 text-[clamp(1.05rem,0.65rem+2.1vw,4.5rem)] whitespace-nowrap">
               Your Journey, <span class="text-gold italic">Unforgettable</span>
             </h1>
-            <p class="mt-5 sm:mt-6 md:mt-8 text-sm sm:text-base md:text-lg text-white/95 max-w-md leading-relaxed animate-fade-in-up animate-delay-200" style="text-shadow: 0 1px 12px rgba(0,0,0,0.5);">
+            <p class="mt-5 sm:mt-6 md:mt-8 text-sm sm:text-base md:text-lg text-white/95 max-w-md leading-relaxed animate-fade-in-up animate-delay-200">
               Curated tours, stunning destinations, and memories that last a lifetime. Let us guide your next adventure.
             </p>
             <div class="mt-8 sm:mt-10 md:mt-12 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 animate-fade-in-up animate-delay-300">
