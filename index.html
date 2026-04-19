@@ -82,12 +82,21 @@
     <section class="relative min-h-[100dvh] min-h-screen w-full overflow-hidden bg-black">
       <div class="absolute inset-0 z-0 hero-slider bg-black">
         <img src="Photos/Desert%20Safari%20under%20tours.jpg" alt="UAE desert safari and dunes" class="hero-slide active absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="0" fetchpriority="high">
-        <img src="Photos/Marina%20Expe.jpg" alt="Dubai marina and waterfront" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="1">
-        <img src="Photos/Burj%20Khalifa.jpeg" alt="Burj Khalifa, full tower, Dubai" class="hero-slide hero-slide--contain absolute inset-0 h-full w-full" data-slide="2">
+        <img src="Photos/Desert%20adventure.jpeg" alt="Desert adventure and golden dunes" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="1">
+        <img src="Photos/Dubai%20City%20Tour.jpg" alt="Dubai city tour and skyline" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="2">
+        <img src="Photos/Marina%20Expe.jpg" alt="Dubai marina and waterfront" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="3">
+        <img src="Photos/Marina%20experience.jpeg" alt="Marina yachts and waterfront living" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="4">
+        <img src="Photos/Burj%20Khalifa.jpeg" alt="Burj Khalifa, full tower, Dubai" class="hero-slide hero-slide--contain absolute inset-0 h-full w-full" data-slide="5">
+        <img src="Photos/museum%20if%20the%20future.jpeg" alt="Museum of the Future, Dubai" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="6">
+        <img src="Photos/Culture.jpeg" alt="UAE culture and heritage" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="7">
+        <img src="Photos/Miracle%20Gardens.jpeg" alt="Dubai Miracle Garden" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="8">
+        <img src="Photos/abudabi.jpeg" alt="Abu Dhabi landmarks" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="9">
+        <img src="Photos/Highland%20and%20treking.jpg" alt="Highland trekking and mountain views" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="10">
+        <img src="Photos/Jebel%20Jais%20-%20Ras%20Al%20Khaimah.jpeg" alt="Jebel Jais mountains, Ras Al Khaimah" class="hero-slide absolute inset-0 h-full w-full object-cover object-center scale-105 animate-slow-zoom" data-slide="11">
       </div>
       <!-- Dark overlay + left emphasis so headline and CTAs stay readable on any slide -->
-      <div class="absolute inset-0 z-10 pointer-events-none bg-black/35"></div>
-      <div class="absolute inset-0 z-10 pointer-events-none" style="background: linear-gradient(105deg, rgba(0,0,0,0.88) 0%, rgba(15,23,42,0.72) 26%, rgba(0,0,0,0.5) 44%, rgba(0,0,0,0.22) 62%, rgba(0,0,0,0.14) 100%), linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.12) 22%, transparent 38%, transparent 68%, rgba(0,0,0,0.5) 100%);"></div>
+      <div class="absolute inset-0 z-10 pointer-events-none bg-black/45"></div>
+      <div class="absolute inset-0 z-10 pointer-events-none" style="background: linear-gradient(105deg, rgba(0,0,0,0.92) 0%, rgba(15,23,42,0.78) 26%, rgba(0,0,0,0.58) 44%, rgba(0,0,0,0.28) 62%, rgba(0,0,0,0.18) 100%), linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.18) 22%, transparent 38%, transparent 68%, rgba(0,0,0,0.58) 100%);"></div>
 
       <div class="relative z-20 flex min-h-[100dvh] min-h-screen w-full flex-col justify-center pb-32 md:pb-36 pt-[calc(4rem+env(safe-area-inset-top))] md:pt-[calc(5rem+env(safe-area-inset-top))]">
         <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -345,7 +354,7 @@
         idx = (idx + 1) % slides.length;
         slides[idx].classList.add('active');
       }
-      setInterval(next, 5000);
+      setInterval(next, 4500);
     })();
   </script>
 </body>
