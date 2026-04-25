@@ -1,39 +1,11 @@
 # Honzi Tours & Travel — Apache config for Hostinger
-# Hides .html extension and 301-redirects /page.html -> /page
 # IMPORTANT: This is a hidden file. In Hostinger File Manager click
 # "Settings" (gear icon, top right) and enable "Show Hidden Files"
 # before uploading, otherwise it will be skipped.
 
-# Disable Apache's MultiViews — it can break clean-URL rewrites
-Options -MultiViews
-
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  # If your site is in a subfolder, change this to that folder, e.g. /honzi/
-  RewriteBase /
-
-  # 1) Redirect /index.html (or /index) -> /
-  RewriteCond %{THE_REQUEST} \s/+(?:index(?:\.html)?)[\s?] [NC]
-  RewriteRule ^ / [R=301,L]
-
-  # 2) Redirect /<page>.html -> /<page>
-  #    Skip files in /components/ so the JS loader can still fetch partials
-  RewriteCond %{THE_REQUEST} \s/+([^\s?]+)\.html[\s?] [NC]
-  RewriteCond %1 !^components/ [NC]
-  RewriteRule ^ /%1 [R=301,L]
-
-  # 3) Internally serve /<page> using /<page>.html when it exists
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.+?)/?$ $1.html [L]
-</IfModule>
-
-# Reasonable defaults
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 
-# Force UTF-8 for HTML
 AddDefaultCharset UTF-8
 
 # Light caching for static assets (safe defaults)

@@ -24,71 +24,43 @@ const MIME = {
   '.map': 'application/json',
 };
 
-function send(res, status, body, headers = {}) {
-  res.writeHead(status, headers);
-  res.end(body);
-}
+const server = http.createServer((req, res) => {
+  let urlPath = decodeURIComponent(req.url).split('?')[0];
+  if (urlPath === '/') urlPath = '/index.html';
+  const filePath = path.join(ROOT, urlPath);
 
-function redirect(res, location) {
-  res.writeHead(301, { Location: location });
-  res.end();
-}
+  if (!filePath.startsWith(ROOT)) {
+    res.writeHead(403);
+    res.end('Forbidden');
+    return;
+  }
 
-function tryServe(res, filePath) {
   fs.stat(filePath, (err, stat) => {
     if (err || !stat.isFile()) {
-      send(res, 404, 'Not Found', { 'Content-Type': 'text/plain; charset=utf-8' });
+      const notFound = path.join(ROOT, '404.html');
+      fs.stat(notFound, (e404, s404) => {
+        if (!e404 && s404.isFile()) {
+          res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+          fs.createReadStream(notFound).pipe(res);
+        } else {
+          res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+          res.end('Not Found');
+        }
+      });
       return;
     }
+
     const ext = path.extname(filePath);
     const contentType = MIME[ext] || 'application/octet-stream';
+
     const stream = fs.createReadStream(filePath);
-    stream.on('error', () => send(res, 500, 'Internal Server Error'));
+    stream.on('error', () => {
+      res.writeHead(500);
+      res.end('Internal Server Error');
+    });
     res.writeHead(200, { 'Content-Type': contentType });
     stream.pipe(res);
   });
-}
-
-const server = http.createServer((req, res) => {
-  const [rawPath, rawQuery] = decodeURIComponent(req.url).split('?');
-  const query = rawQuery ? `?${rawQuery}` : '';
-  let urlPath = rawPath;
-
-  // 1) Redirect /index.html (or /index) → /
-  if (urlPath === '/index.html' || urlPath === '/index') {
-    return redirect(res, '/' + query);
-  }
-
-  // 2) Redirect any /<name>.html → /<name> (clean URLs are canonical)
-  //    Skip component partials so the loader can still fetch them.
-  if (urlPath.endsWith('.html') && !urlPath.startsWith('/components/')) {
-    return redirect(res, urlPath.slice(0, -'.html'.length) + query);
-  }
-
-  // 3) Strip trailing slash (except root) for canonical URLs
-  if (urlPath.length > 1 && urlPath.endsWith('/')) {
-    return redirect(res, urlPath.replace(/\/+$/, '') + query);
-  }
-
-  // 4) Root → index.html
-  if (urlPath === '/') urlPath = '/index.html';
-
-  let filePath = path.join(ROOT, urlPath);
-  if (!filePath.startsWith(ROOT)) {
-    return send(res, 403, 'Forbidden');
-  }
-
-  // 5) If path has no extension, try the .html version (clean URL)
-  if (!path.extname(urlPath)) {
-    const htmlPath = filePath + '.html';
-    return fs.stat(htmlPath, (err, stat) => {
-      if (!err && stat.isFile()) return tryServe(res, htmlPath);
-      // Fall back to direct file (e.g. directories/static assets without ext)
-      tryServe(res, filePath);
-    });
-  }
-
-  tryServe(res, filePath);
 });
 
 server.listen(PORT, () => {
