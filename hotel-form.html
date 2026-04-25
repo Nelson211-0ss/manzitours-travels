@@ -135,10 +135,9 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="js/load-components.js"></script>
   <script src="js/countries.js"></script>
+  <script src="js/form-submit.js"></script>
   <script>
     (function() {
-      var WHATSAPP_NUMBER = '971551352382';
-
       function populateCountries() {
         var select = document.getElementById('country');
         if (!select) return;
@@ -220,57 +219,34 @@
         return doc;
       }
 
-      document.getElementById('hotel-form-el').addEventListener('submit', function(e) {
+      var form = document.getElementById('hotel-form-el');
+      form.addEventListener('submit', function(e) {
         e.preventDefault();
         var btn = document.getElementById('submit-btn');
+        var origHTML = btn.innerHTML;
         btn.disabled = true;
-        btn.innerHTML = '<span class="animate-pulse">Processing…</span>';
+        btn.innerHTML = '<span class="animate-pulse">Sending…</span>';
 
         var data = getFormData();
-
+        var msg = formatMessage(data);
+        var pdfBlob = null;
+        var fileName = 'Hotel-Booking-Request-' + (data.name || 'form').replace(/\s+/g, '-') + '.pdf';
         try {
-          var doc = generatePDF(data);
-          var pdfBlob = doc.output('blob');
-          var fileName = 'Hotel-Booking-Request-' + (data.name || 'form').replace(/\s+/g, '-') + '.pdf';
-          var pdfFile = new File([pdfBlob], fileName, { type: 'application/pdf' });
-          var msg = formatMessage(data);
-
-          if (navigator.share && navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
-            navigator.share({
-              title: 'Hotel Booking Request',
-              text: msg + '\n\nSend to: +971 55 135 2382',
-              files: [pdfFile]
-            }).then(function() {
-              window.open('https://wa.me/' + WHATSAPP_NUMBER, '_blank');
-            }).catch(function() {
-              fallbackSend(pdfBlob, fileName, msg);
-            }).finally(function() {
-              resetBtn(btn);
-            });
-          } else {
-            fallbackSend(pdfBlob, fileName, msg);
-            resetBtn(btn);
-          }
+          pdfBlob = generatePDF(data).output('blob');
         } catch (err) {
-          console.error('Error:', err);
-          resetBtn(btn);
+          console.warn('PDF generation failed, sending without attachment:', err);
         }
 
-        function fallbackSend(blob, name, text) {
-          var a = document.createElement('a');
-          a.href = URL.createObjectURL(blob);
-          a.download = name;
-          a.click();
-          URL.revokeObjectURL(a.href);
-          var waMsg = encodeURIComponent(text + '\n\n📎 Your PDF has been downloaded. Please attach it to this chat.');
-          window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + waMsg, '_blank');
-        }
-
-        function resetBtn(b) {
-          b.disabled = false;
-          b.innerHTML = '<i data-feather="send" class="h-5 w-5"></i> Submit request';
-          if (window.feather) window.feather.replace();
-        }
+        HonziForm.submit({
+          title: 'Hotel Booking Request',
+          data: data,
+          message: msg,
+          pdf: pdfBlob,
+          fileName: fileName,
+          form: form,
+          button: btn,
+          buttonHTML: origHTML
+        });
       });
 
       populateCountries();
