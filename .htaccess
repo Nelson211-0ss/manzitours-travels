@@ -1,0 +1,23 @@
+# Honzi Tours & Travel — clean URLs (Apache)
+# Hides .html extension and 301-redirects /page.html → /page
+
+RewriteEngine On
+
+# 1) Redirect /index.html (or /index) → / (canonical root)
+RewriteCond %{THE_REQUEST} \s/+(?:index(?:\.html)?)[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# 2) Redirect /<page>.html → /<page>
+#    (skip files in /components/ so the JS loader can still fetch partials)
+RewriteCond %{THE_REQUEST} \s/+([^\s?]+)\.html[\s?] [NC]
+RewriteCond %1 !^components/ [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 3) Internally serve /<page> using /<page>.html when it exists
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Optional: prettier 404 (uncomment if you add a 404.html)
+# ErrorDocument 404 /404.html
