@@ -70,6 +70,9 @@
     fd.append('_template', 'table');
     fd.append('_captcha', 'false');
     fd.append('Form Type', opts.title);
+    if (opts.replyTo) {
+      fd.append('_replyto', opts.replyTo);
+    }
 
     Object.keys(opts.data).forEach(function (key) {
       var label = key.replace(/([A-Z])/g, ' $1').replace(/^./, function (s) { return s.toUpperCase(); });
@@ -133,6 +136,7 @@
    * @param {HTMLFormElement} [opts.form]   the <form> element (will be reset on success)
    * @param {HTMLButtonElement} [opts.button] the submit button (re-enabled at the end)
    * @param {string} [opts.buttonHTML] original button innerHTML to restore
+   * @param {string} [opts.replyTo]     visitor email for FormSubmit _replyto (optional)
    */
   function submit(opts) {
     var form = opts.form;

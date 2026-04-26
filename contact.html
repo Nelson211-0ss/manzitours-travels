@@ -130,7 +130,7 @@
                 <h2 class="font-display text-2xl font-bold text-white md:text-3xl">Send an inquiry</h2>
                 <p class="mt-2 text-sm leading-relaxed text-gold-light/85">A few fields are enough to get started—we’ll follow up with questions if we need them.</p>
               </div>
-              <form class="mt-8 space-y-6" action="#" method="post">
+              <form id="contact-inquiry-form" class="mt-8 space-y-6" action="#" method="post">
                 <div class="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label for="name" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Name <span class="text-rose-400/90">*</span></label>
@@ -165,7 +165,7 @@
                 </div>
                 <div class="flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
                   <p class="text-xs text-gold-light/55">By sending this form, you agree we may contact you about your trip.</p>
-                  <button type="submit" class="inline-flex w-full items-center justify-center rounded-full bg-gold px-10 py-4 text-sm font-semibold text-black transition hover:bg-gold-dark hover:text-white sm:w-auto">
+                  <button type="submit" id="contact-submit-btn" class="inline-flex w-full items-center justify-center rounded-full bg-gold px-10 py-4 text-sm font-semibold text-black transition hover:bg-gold-dark hover:text-white disabled:opacity-60 sm:w-auto">
                     Send inquiry
                   </button>
                 </div>
@@ -182,5 +182,66 @@
   </div>
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="js/load-components.js"></script>
+  <script src="js/form-submit.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('contact-inquiry-form');
+      if (!form) return;
+
+      function tourLabel() {
+        var sel = document.getElementById('tour');
+        if (!sel || !sel.options || sel.selectedIndex < 0) return '';
+        var opt = sel.options[sel.selectedIndex];
+        if (!opt || !opt.value) return '';
+        return opt.textContent || opt.value;
+      }
+
+      function getFormData() {
+        var fd = new FormData(form);
+        return {
+          name: (fd.get('name') || '').trim(),
+          email: (fd.get('email') || '').trim(),
+          phone: (fd.get('phone') || '').trim(),
+          tourInterest: tourLabel() || '-',
+          message: (fd.get('message') || '').trim()
+        };
+      }
+
+      function formatMessage(data) {
+        return [
+          '*Website contact inquiry*',
+          '',
+          'Name: ' + data.name,
+          'Email: ' + data.email,
+          'Phone: ' + (data.phone || '-'),
+          'Tour / interest: ' + data.tourInterest,
+          '',
+          'Message:',
+          data.message
+        ].join('\n');
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = document.getElementById('contact-submit-btn');
+        var origHTML = btn ? btn.innerHTML : '';
+        if (btn) {
+          btn.disabled = true;
+          btn.innerHTML = '<span class="animate-pulse">Sending…</span>';
+        }
+
+        var data = getFormData();
+        HonziForm.submit({
+          title: 'Website contact inquiry',
+          data: data,
+          message: formatMessage(data),
+          replyTo: data.email,
+          form: form,
+          button: btn,
+          buttonHTML: origHTML
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
