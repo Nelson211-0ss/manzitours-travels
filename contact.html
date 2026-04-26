@@ -20,6 +20,34 @@
   </style>
   <link rel="stylesheet" href="css/motion-accessibility.css">
   <link rel="stylesheet" href="css/scroll-animations.css">
+  <style>
+    .contact-input {
+      width: 100%;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(0, 0, 0, 0.35);
+      padding: 0.875rem 1rem;
+      font-size: 15px;
+      color: #fff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .contact-input::placeholder { color: rgba(255, 255, 255, 0.32); }
+    .contact-input:hover { border-color: rgba(193, 160, 97, 0.22); background: rgba(0, 0, 0, 0.45); }
+    .contact-input:focus {
+      outline: none;
+      border-color: rgba(193, 160, 97, 0.45);
+      box-shadow: 0 0 0 3px rgba(193, 160, 97, 0.12);
+    }
+    .contact-strip-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.92);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .contact-strip-link:hover { color: #C1A061; }
+    .contact-dot { color: rgba(255, 255, 255, 0.2); user-select: none; }
+  </style>
 </head>
 <body class="font-sans text-gold-light antialiased bg-black">
   <script>document.documentElement.classList.add('js-reveal');</script>
@@ -27,151 +55,108 @@
     <div class="h-16 md:h-20 bg-black border-b border-gold/20 flex items-center justify-center"><span class="text-gold-light">Loading…</span></div>
   </div>
 
-  <main class="relative pb-24">
-    <div class="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-deepBlue via-black to-deepBlue"></div>
-    <div class="pointer-events-none fixed inset-0 -z-10 bg-black/40"></div>
+  <main class="relative pb-20 md:pb-28">
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(30,58,95,0.35),transparent_50%),linear-gradient(180deg,#0a0f18_0%,#000_45%,#05080c_100%)]"></div>
 
-    <!-- Hero: full-bleed image + copy (matches tours / about) -->
-    <section class="relative min-h-[44vh] overflow-hidden bg-black pt-24 pb-14 md:min-h-[50vh] md:pt-32 md:pb-20">
-      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80" alt="Travel essentials, map, and camera on a desk" width="1920" height="1080" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/90"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent"></div>
-      <div class="pointer-events-none absolute -left-24 top-1/3 h-72 w-72 rounded-full bg-gold/15 blur-[100px]"></div>
-      <div class="pointer-events-none absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-deepBlue-light/20 blur-[90px]"></div>
-      <div class="relative z-10 mx-auto flex min-h-[32vh] max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8 md:min-h-[38vh]" data-reveal="soft">
-        <p class="text-xs font-semibold uppercase tracking-[0.28em] text-gold/95">Get in touch</p>
-        <h1 class="font-display mt-3 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl">Contact us</h1>
-        <p class="mt-5 max-w-xl text-base leading-relaxed text-gold-light/95 md:text-lg">
-          Share your dates, group size, and what you’re dreaming of—we’ll reply with a tailored proposal, usually within 24 hours.
+    <!-- Compact hero -->
+    <section class="relative overflow-hidden border-b border-white/[0.06] pt-24 pb-12 md:pt-32 md:pb-16">
+      <div class="pointer-events-none absolute inset-0 opacity-[0.35]">
+        <div class="absolute -right-20 top-0 h-[420px] w-[420px] rounded-full bg-gold/10 blur-[120px]"></div>
+        <div class="absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-deepBlue-light/20 blur-[100px]"></div>
+      </div>
+      <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6" data-reveal="soft">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.35em] text-gold/90">Contact</p>
+        <h1 class="font-display mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">Let’s plan your next trip</h1>
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-gold-light/88 md:text-[17px]">
+          Tell us what you have in mind—we usually respond within 24 hours. Prefer chat? WhatsApp is the fastest line to our team.
         </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#inquiry-form" class="inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-black transition hover:bg-gold-dark hover:text-white">
-            Send a message
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#inquiry-form" class="inline-flex items-center justify-center rounded-full bg-gold px-7 py-3 text-sm font-semibold text-black transition hover:bg-gold-dark hover:text-white">
+            Write to us
           </a>
-          <a href="https://wa.me/971551352382?text=Hi%20Honzi%20Tours%20%26%20Travel%2C%20I%27d%20like%20to%20inquire%20about" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-gold/55 bg-black/35 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-gold hover:bg-gold/10">
+          <a href="https://wa.me/971551352382?text=Hi%20Honzi%20Tours%20%26%20Travel%2C%20I%27d%20like%20to%20inquire%20about" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-7 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-gold/40 hover:bg-gold/5">
+            <svg class="h-4 w-4 text-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             WhatsApp
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Content grid -->
-    <section class="relative z-10 px-4 pb-16 pt-10 sm:px-6 md:pt-14 lg:px-8">
-      <div class="mx-auto max-w-7xl">
-        <div class="grid gap-8 lg:grid-cols-12 lg:gap-10">
-          <!-- Sidebar -->
-          <aside class="flex flex-col gap-4 lg:col-span-4">
-            <a href="https://wa.me/971551352382?text=Hi%20Honzi%20Tours%20%26%20Travel%2C%20I%27d%20like%20to%20inquire%20about" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 rounded-2xl border border-gold/35 bg-gradient-to-br from-deepBlue-dark/90 to-black/80 p-5 shadow-lg shadow-black/30 backdrop-blur-md transition hover:border-gold hover:bg-gold/5" data-reveal="lift" data-reveal-delay="0">
-              <span class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-gold/40 bg-black/40 text-gold transition group-hover:border-gold group-hover:text-gold-light">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              </span>
-              <div class="min-w-0 text-left">
-                <p class="text-xs font-semibold uppercase tracking-wider text-gold/90">Fastest reply</p>
-                <p class="mt-0.5 font-semibold text-white">WhatsApp</p>
-                <p class="mt-1 text-sm text-gold-light/75">Tap to chat with our team on WhatsApp.</p>
-              </div>
-              <i data-feather="chevron-right" class="ml-auto h-5 w-5 flex-shrink-0 text-gold/50 transition group-hover:translate-x-0.5 group-hover:text-gold"></i>
+    <!-- Single column: contact strip (no cards) + one form panel -->
+    <section class="relative z-10 px-4 pt-12 sm:px-6 md:pt-16">
+      <div class="mx-auto max-w-3xl scroll-mt-28" id="inquiry-form">
+        <!-- Reach us: one fluid block, no stacked cards -->
+        <div class="mb-12 border-b border-white/[0.08] pb-10" data-reveal="lift">
+          <h2 class="font-display text-lg font-semibold text-white">Reach us</h2>
+          <p class="mt-2 text-sm text-gold-light/65">Dubai, UAE · Mon–Fri 8:00–18:00 · Sat 9:00–14:00</p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-1 sm:gap-y-2">
+            <a href="https://wa.me/971551352382?text=Hi%20Honzi%20Tours%20%26%20Travel%2C%20I%27d%20like%20to%20inquire%20about" target="_blank" rel="noopener noreferrer" class="contact-strip-link inline-flex items-center gap-2 sm:inline-flex">
+              <i data-feather="message-circle" class="h-4 w-4 text-gold/90"></i>
+              <span>WhatsApp</span>
             </a>
-
-            <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl" data-reveal="right" data-reveal-delay="60">
-              <div class="flex items-start gap-3">
-                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold">
-                  <i data-feather="map-pin" class="h-5 w-5"></i>
-                </span>
-                <div>
-                  <h2 class="font-display text-sm font-bold text-white">Office</h2>
-                  <p class="mt-1 text-sm leading-relaxed text-gold-light/85">Dubai, UAE</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl" data-reveal="right" data-reveal-delay="120">
-              <div class="flex items-start gap-3">
-                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold">
-                  <i data-feather="phone" class="h-5 w-5"></i>
-                </span>
-                <div>
-                  <h2 class="font-display text-sm font-bold text-white">Phone</h2>
-                  <a href="tel:+971551352382" class="mt-1 inline-block text-sm font-semibold text-gold transition hover:text-gold-light">+971 55 135 2382</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl" data-reveal="right" data-reveal-delay="180">
-              <div class="flex items-start gap-3">
-                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold">
-                  <i data-feather="mail" class="h-5 w-5"></i>
-                </span>
-                <div>
-                  <h2 class="font-display text-sm font-bold text-white">Email</h2>
-                  <a href="mailto:info@honzitoursandtravel.com" class="mt-1 inline-block break-all text-sm font-semibold text-gold transition hover:text-gold-light">info@honzitoursandtravel.com</a>
-                  <p class="mt-2 text-xs text-gold-light/60">We usually reply within 24 hours.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl" data-reveal="right" data-reveal-delay="240">
-              <div class="flex items-start gap-3">
-                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold">
-                  <i data-feather="clock" class="h-5 w-5"></i>
-                </span>
-                <div>
-                  <h2 class="font-display text-sm font-bold text-white">Hours</h2>
-                  <p class="mt-1 text-sm leading-relaxed text-gold-light/85">Mon – Fri: 8:00 – 18:00<br>Sat: 9:00 – 14:00</p>
-                </div>
-              </div>
-            </div>
-          </aside>
-
-          <!-- Form -->
-          <div class="lg:col-span-8">
-            <div id="inquiry-form" class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/40 backdrop-blur-xl md:p-10 scroll-mt-28" data-reveal="lift" data-reveal-delay="100">
-              <div class="border-b border-white/10 pb-6">
-                <h2 class="font-display text-2xl font-bold text-white md:text-3xl">Send an inquiry</h2>
-                <p class="mt-2 text-sm leading-relaxed text-gold-light/85">A few fields are enough to get started—we’ll follow up with questions if we need them.</p>
-              </div>
-              <form id="contact-inquiry-form" class="mt-8 space-y-6" action="#" method="post">
-                <div class="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label for="name" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Name <span class="text-rose-400/90">*</span></label>
-                    <input type="text" id="name" name="name" required autocomplete="name" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="Your name">
-                  </div>
-                  <div>
-                    <label for="email" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Email <span class="text-rose-400/90">*</span></label>
-                    <input type="email" id="email" name="email" required autocomplete="email" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="you@example.com">
-                  </div>
-                </div>
-                <div class="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label for="phone" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Phone</label>
-                    <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="+971 …">
-                  </div>
-                  <div>
-                    <label for="tour" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Tour or interest</label>
-                    <select id="tour" name="tour" class="form-select-chevron w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20">
-                      <option value="">Select an option</option>
-                      <option value="safari">Classic Safari</option>
-                      <option value="coastal">Coastal Escape</option>
-                      <option value="heritage">Heritage Trail</option>
-                      <option value="highland">Highland Trek</option>
-                      <option value="family">Family Adventure</option>
-                      <option value="custom">Custom itinerary</option>
-                    </select>
-                  </div>
-                </div>
-                <div>
-                  <label for="message" class="mb-2 block text-xs font-semibold uppercase tracking-wider text-gold-light/95">Message <span class="text-rose-400/90">*</span></label>
-                  <textarea id="message" name="message" rows="5" required class="w-full resize-y rounded-xl border border-white/10 bg-black/50 px-4 py-3.5 text-[15px] text-white placeholder:text-white/35 transition focus:border-gold/50 focus:outline-none focus:ring-2 focus:ring-gold/20" placeholder="Dates, group size, special requests…"></textarea>
-                </div>
-                <div class="flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
-                  <p class="text-xs text-gold-light/55">By sending this form, you agree we may contact you about your trip.</p>
-                  <button type="submit" id="contact-submit-btn" class="inline-flex w-full items-center justify-center rounded-full bg-gold px-10 py-4 text-sm font-semibold text-black transition hover:bg-gold-dark hover:text-white disabled:opacity-60 sm:w-auto">
-                    Send inquiry
-                  </button>
-                </div>
-              </form>
-            </div>
+            <span class="contact-dot hidden px-2 sm:inline" aria-hidden="true">·</span>
+            <a href="tel:+971551352382" class="contact-strip-link inline-flex items-center gap-2 sm:inline-flex">
+              <i data-feather="phone" class="h-4 w-4 text-gold/90"></i>
+              <span>+971 55 135 2382</span>
+            </a>
+            <span class="contact-dot hidden px-2 sm:inline" aria-hidden="true">·</span>
+            <a href="mailto:info@honzitoursandtravel.com" class="contact-strip-link inline-flex items-center gap-2 break-all sm:inline-flex">
+              <i data-feather="mail" class="h-4 w-4 text-gold/90"></i>
+              <span>info@honzitoursandtravel.com</span>
+            </a>
           </div>
+        </div>
+
+        <!-- One form surface -->
+        <div class="rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-6 shadow-[0_24px_80px_-24px_rgba(0,0,0,0.65)] backdrop-blur-xl sm:p-8 md:p-10" data-reveal="lift" data-reveal-delay="80">
+          <div class="max-w-xl">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold/85">Inquiry</p>
+            <h2 class="font-display mt-2 text-2xl font-bold text-white sm:text-3xl">Send a message</h2>
+            <p class="mt-3 text-sm leading-relaxed text-gold-light/75">
+              Share dates, group size, and anything we should know—we'll follow up by email.
+            </p>
+          </div>
+
+          <form id="contact-inquiry-form" class="mt-10 space-y-6" action="#" method="post">
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label for="name" class="mb-2 block text-[11px] font-semibold uppercase tracking-wider text-gold-light/80">Name <span class="text-rose-400/90">*</span></label>
+                <input type="text" id="name" name="name" required autocomplete="name" class="contact-input" placeholder="Your name">
+              </div>
+              <div>
+                <label for="email" class="mb-2 block text-[11px] font-semibold uppercase tracking-wider text-gold-light/80">Email <span class="text-rose-400/90">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email" class="contact-input" placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label for="phone" class="mb-2 block text-[11px] font-semibold uppercase tracking-wider text-gold-light/80">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" class="contact-input" placeholder="+971 …">
+              </div>
+              <div>
+                <label for="tour" class="mb-2 block text-[11px] font-semibold uppercase tracking-wider text-gold-light/80">Tour or interest</label>
+                <select id="tour" name="tour" class="form-select-chevron contact-input cursor-pointer">
+                  <option value="">Select an option</option>
+                  <option value="safari">Classic Safari</option>
+                  <option value="coastal">Coastal Escape</option>
+                  <option value="heritage">Heritage Trail</option>
+                  <option value="highland">Highland Trek</option>
+                  <option value="family">Family Adventure</option>
+                  <option value="custom">Custom itinerary</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="message" class="mb-2 block text-[11px] font-semibold uppercase tracking-wider text-gold-light/80">Message <span class="text-rose-400/90">*</span></label>
+              <textarea id="message" name="message" rows="5" required class="contact-input min-h-[140px] resize-y" placeholder="Dates, group size, special requests…"></textarea>
+            </div>
+            <div class="flex flex-col-reverse gap-4 border-t border-white/[0.06] pt-8 sm:flex-row sm:items-center sm:justify-between">
+              <p class="text-xs leading-relaxed text-gold-light/50 sm:max-w-[280px]">By sending this form, you agree we may contact you about your trip.</p>
+              <button type="submit" id="contact-submit-btn" class="inline-flex shrink-0 items-center justify-center rounded-full bg-gold px-10 py-3.5 text-sm font-semibold text-black transition hover:bg-gold-dark hover:text-white disabled:opacity-60">
+                Send inquiry
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -236,6 +221,7 @@
           data: data,
           message: formatMessage(data),
           replyTo: data.email,
+          sendWhatsApp: false,
           form: form,
           button: btn,
           buttonHTML: origHTML

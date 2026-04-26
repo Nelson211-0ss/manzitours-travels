@@ -91,12 +91,38 @@
       body: buildFormData(opts),
       headers: { Accept: 'application/json' }
     }).then(function (r) {
-      return r.json().catch(function () { return { success: 'true' }; });
-    }).then(function (json) {
-      var ok = json && (json.success === 'true' || json.success === true);
-      if (!ok) throw new Error((json && json.message) || 'Email service rejected the request');
-      return true;
+      return r.json().catch(function () { return null; }).then(function (json) {
+        return { status: r.status, ok: r.ok, json: json };
+      });
+    }).then(function (res) {
+      var json = res.json || {};
+      console.info('[HonziForm] FormSubmit response:', res.status, json);
+
+      var success = json.success === 'true' || json.success === true;
+      if (success) return true;
+
+      var msg = (json.message || '').toLowerCase();
+      var err;
+      if (!res.ok) {
+        err = new Error('FormSubmit returned HTTP ' + res.status);
+        err.code = 'http';
+      } else if (msg.indexOf('confirm') !== -1 || msg.indexOf('activate') !== -1) {
+        err = new Error(json.message || 'Activation required');
+        err.code = 'activation';
+      } else {
+        err = new Error(json.message || 'Email service rejected the request');
+        err.code = 'rejected';
+      }
+      throw err;
     });
+  }
+
+  function buildMailtoFallback(opts) {
+    var subject = opts.title + ' – ' + (opts.data.name || 'New request');
+    var body = (opts.message || '') + '\n\n— sent from honzitoursandtravel.com';
+    return 'mailto:' + COMPANY_EMAIL +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body='    + encodeURIComponent(body);
   }
 
   function sendWhatsAppViaCallMeBot(message) {
@@ -137,23 +163,41 @@
    * @param {HTMLButtonElement} [opts.button] the submit button (re-enabled at the end)
    * @param {string} [opts.buttonHTML] original button innerHTML to restore
    * @param {string} [opts.replyTo]     visitor email for FormSubmit _replyto (optional)
+   * @param {boolean} [opts.sendWhatsApp=true] set false for email-only forms
    */
   function submit(opts) {
     var form = opts.form;
     var btn = opts.button;
     var origLabel = opts.buttonHTML || (btn ? btn.innerHTML : '');
+    var shouldSendWhatsApp = opts.sendWhatsApp !== false;
 
     var emailPromise    = sendEmail(opts).catch(function (err) {
       console.error('[HonziForm] email send failed:', err);
       return { failed: true, err: err };
     });
-    var whatsappPromise = deliverWhatsApp(opts.message);
+    var whatsappPromise = shouldSendWhatsApp ? deliverWhatsApp(opts.message) : Promise.resolve();
 
     return Promise.all([emailPromise, whatsappPromise])
       .then(function (results) {
-        var emailFailed = results[0] && results[0].failed;
+        var emailResult = results[0];
+        var emailFailed = emailResult && emailResult.failed;
+
         if (emailFailed) {
-          showToast('Sent via WhatsApp. Email service was temporarily unavailable.', 'error');
+          var code = emailResult.err && emailResult.err.code;
+          var fallbackUrl = buildMailtoFallback(opts);
+          if (code === 'activation') {
+            showToast('Email service needs one-time activation. Opening your email app as a backup…', 'error');
+          } else if (shouldSendWhatsApp) {
+            showToast('Sent via WhatsApp. Email backup opened in your mail app.', 'error');
+          } else {
+            showToast('Email service unavailable. Opening your email app so nothing is lost…', 'error');
+          }
+          try { window.location.href = fallbackUrl; } catch (e) {}
+          return;
+        }
+
+        if (!shouldSendWhatsApp) {
+          showToast('Request sent to our email. Our team will be in touch shortly.');
         } else if (CALLMEBOT_API_KEY) {
           showToast('Request sent! Our team will be in touch shortly.');
         } else {
