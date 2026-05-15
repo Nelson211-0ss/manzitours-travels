@@ -7,29 +7,61 @@
       </a>
 
       <!-- Desktop navigation -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="index.html" class="text-gold-light hover:text-gold font-medium transition-colors">Home</a>
+      <div class="hidden md:flex items-center gap-6 lg:gap-8">
+        <a href="index.html" class="inline-flex items-center gap-2 text-gold-light hover:text-gold font-medium transition-colors">
+          <i data-feather="home" class="h-4 w-4 shrink-0 opacity-80" aria-hidden="true"></i>
+          Home
+        </a>
         <!-- Services dropdown -->
         <div class="relative group" id="services-dropdown">
-          <button type="button" class="flex items-center gap-1 text-gold-light hover:text-gold font-medium transition-colors focus:outline-none focus:text-gold" aria-expanded="false" aria-haspopup="true" id="services-dropdown-btn">
+          <button type="button" class="inline-flex items-center gap-1 text-gold-light hover:text-gold font-medium transition-colors focus:outline-none focus:text-gold" aria-expanded="false" aria-haspopup="true" id="services-dropdown-btn">
+            <i data-feather="layers" class="h-4 w-4 shrink-0 opacity-80" aria-hidden="true"></i>
             Services
             <i data-feather="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
           </button>
           <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200" id="services-dropdown-panel">
-            <div class="min-w-[220px] rounded-xl border border-gold/30 bg-black py-2 shadow-xl shadow-black/50">
-              <a href="visa-assistance.html" class="block px-4 py-2.5 text-gold-light hover:bg-gold/20 hover:text-gold font-medium transition-colors">Visa assistance</a>
-              <a href="flight-booking.html" class="block px-4 py-2.5 text-gold-light hover:bg-gold/20 hover:text-gold font-medium transition-colors">Flight booking</a>
-              <a href="hotel-assistance.html" class="block px-4 py-2.5 text-gold-light hover:bg-gold/20 hover:text-gold font-medium transition-colors">Hotel assistance</a>
-              <a href="tailored-tours.html" class="block px-4 py-2.5 text-gold-light hover:bg-gold/20 hover:text-gold font-medium transition-colors">Tailored experiences</a>
-              <a href="guided-destinations.html" class="block px-4 py-2.5 text-gold-light hover:bg-gold/20 hover:text-gold font-medium transition-colors">Guided destinations</a>
+            <div class="min-w-[240px] rounded-xl border border-gold/30 bg-black py-2 shadow-xl shadow-black/50">
+              <a href="visa-assistance.html" class="flex items-center gap-3 px-4 py-2.5 text-gold-light hover:bg-gold/20 hover:text-gold font-medium transition-colors">
+                <i data-feather="file-text" class="h-4 w-4 shrink-0 text-gold/70" aria-hidden="true"></i>
+                Visa assistance
+              </a>
+              <a href="flight-booking.html" class="flex items-center gap-3 px-4 py-2.5 text-gold-light hover:bg-gold/20 hover:text-gold font-medium transition-colors">
+                <i data-feather="send" class="h-4 w-4 shrink-0 text-gold/70" aria-hidden="true"></i>
+                Flight booking
+              </a>
+              <a href="hotel-assistance.html" class="flex items-center gap-3 px-4 py-2.5 text-gold-light hover:bg-gold/20 hover:text-gold font-medium transition-colors">
+                <i data-feather="home" class="h-4 w-4 shrink-0 text-gold/70" aria-hidden="true"></i>
+                Hotel assistance
+              </a>
+              <a href="tailored-tours.html" class="flex items-center gap-3 px-4 py-2.5 text-gold-light hover:bg-gold/20 hover:text-gold font-medium transition-colors">
+                <i data-feather="map" class="h-4 w-4 shrink-0 text-gold/70" aria-hidden="true"></i>
+                Tailored experiences
+              </a>
+              <a href="guided-destinations.html" class="flex items-center gap-3 px-4 py-2.5 text-gold-light hover:bg-gold/20 hover:text-gold font-medium transition-colors">
+                <i data-feather="navigation" class="h-4 w-4 shrink-0 text-gold/70" aria-hidden="true"></i>
+                Guided destinations
+              </a>
             </div>
           </div>
         </div>
-        <a href="destinations.html" class="text-gold-light hover:text-gold font-medium transition-colors">Destinations</a>
-        <a href="tours.html" class="text-gold-light hover:text-gold font-medium transition-colors">Tours</a>
-        <a href="about.html" class="text-gold-light hover:text-gold font-medium transition-colors">About</a>
-        <a href="contact.html" class="text-gold-light hover:text-gold font-medium transition-colors">Contact</a>
-        <a href="contact.html" class="inline-flex items-center px-5 py-2.5 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white transition-colors shadow-md hover:shadow-lg hover:shadow-gold/20">
+        <a href="destinations.html" class="inline-flex items-center gap-2 text-gold-light hover:text-gold font-medium transition-colors">
+          <i data-feather="compass" class="h-4 w-4 shrink-0 opacity-80" aria-hidden="true"></i>
+          Destinations
+        </a>
+        <a href="tours.html" class="inline-flex items-center gap-2 text-gold-light hover:text-gold font-medium transition-colors">
+          <i data-feather="camera" class="h-4 w-4 shrink-0 opacity-80" aria-hidden="true"></i>
+          Tours
+        </a>
+        <a href="about.html" class="inline-flex items-center gap-2 text-gold-light hover:text-gold font-medium transition-colors">
+          <i data-feather="users" class="h-4 w-4 shrink-0 opacity-80" aria-hidden="true"></i>
+          About
+        </a>
+        <a href="contact.html" class="inline-flex items-center gap-2 text-gold-light hover:text-gold font-medium transition-colors">
+          <i data-feather="message-circle" class="h-4 w-4 shrink-0 opacity-80" aria-hidden="true"></i>
+          Contact
+        </a>
+        <a href="contact.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white transition-colors shadow-md hover:shadow-lg hover:shadow-gold/20">
+          <i data-feather="calendar" class="h-4 w-4 shrink-0" aria-hidden="true"></i>
           Book Now
         </a>
       </div>
@@ -44,18 +76,52 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-gold/20">
       <div class="flex flex-col gap-0 pt-4">
-        <a href="index.html" class="px-4 py-3 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">Home</a>
-        <p class="px-4 pt-3 pb-1 text-xs font-semibold text-gold uppercase tracking-wider">Services</p>
-        <a href="visa-assistance.html" class="px-4 py-2 pl-8 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">Visa assistance</a>
-        <a href="flight-booking.html" class="px-4 py-2 pl-8 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">Flight booking</a>
-        <a href="hotel-assistance.html" class="px-4 py-2 pl-8 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">Hotel assistance</a>
-        <a href="tailored-tours.html" class="px-4 py-2 pl-8 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">Tailored experiences</a>
-        <a href="guided-destinations.html" class="px-4 py-2 pl-8 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">Guided destinations</a>
-        <a href="destinations.html" class="px-4 py-3 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">Destinations</a>
-        <a href="tours.html" class="px-4 py-3 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">Tours</a>
-        <a href="about.html" class="px-4 py-3 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">About</a>
-        <a href="contact.html" class="px-4 py-3 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">Contact</a>
-        <a href="contact.html" class="mx-4 mt-2 inline-flex justify-center items-center px-5 py-3 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white">
+        <a href="index.html" class="flex items-center gap-3 px-4 py-3 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">
+          <i data-feather="home" class="h-5 w-5 shrink-0 text-gold/70" aria-hidden="true"></i>
+          Home
+        </a>
+        <p class="flex items-center gap-2 px-4 pt-3 pb-1 text-xs font-semibold text-gold uppercase tracking-wider">
+          <i data-feather="layers" class="h-3.5 w-3.5" aria-hidden="true"></i>
+          Services
+        </p>
+        <a href="visa-assistance.html" class="flex items-center gap-3 px-4 py-2 pl-8 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">
+          <i data-feather="file-text" class="h-4 w-4 shrink-0 text-gold/60" aria-hidden="true"></i>
+          Visa assistance
+        </a>
+        <a href="flight-booking.html" class="flex items-center gap-3 px-4 py-2 pl-8 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">
+          <i data-feather="send" class="h-4 w-4 shrink-0 text-gold/60" aria-hidden="true"></i>
+          Flight booking
+        </a>
+        <a href="hotel-assistance.html" class="flex items-center gap-3 px-4 py-2 pl-8 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">
+          <i data-feather="home" class="h-4 w-4 shrink-0 text-gold/60" aria-hidden="true"></i>
+          Hotel assistance
+        </a>
+        <a href="tailored-tours.html" class="flex items-center gap-3 px-4 py-2 pl-8 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">
+          <i data-feather="map" class="h-4 w-4 shrink-0 text-gold/60" aria-hidden="true"></i>
+          Tailored experiences
+        </a>
+        <a href="guided-destinations.html" class="flex items-center gap-3 px-4 py-2 pl-8 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">
+          <i data-feather="navigation" class="h-4 w-4 shrink-0 text-gold/60" aria-hidden="true"></i>
+          Guided destinations
+        </a>
+        <a href="destinations.html" class="flex items-center gap-3 px-4 py-3 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">
+          <i data-feather="compass" class="h-5 w-5 shrink-0 text-gold/70" aria-hidden="true"></i>
+          Destinations
+        </a>
+        <a href="tours.html" class="flex items-center gap-3 px-4 py-3 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">
+          <i data-feather="camera" class="h-5 w-5 shrink-0 text-gold/70" aria-hidden="true"></i>
+          Tours
+        </a>
+        <a href="about.html" class="flex items-center gap-3 px-4 py-3 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">
+          <i data-feather="users" class="h-5 w-5 shrink-0 text-gold/70" aria-hidden="true"></i>
+          About
+        </a>
+        <a href="contact.html" class="flex items-center gap-3 px-4 py-3 text-gold-light hover:bg-gold/20 hover:text-gold rounded-lg font-medium">
+          <i data-feather="message-circle" class="h-5 w-5 shrink-0 text-gold/70" aria-hidden="true"></i>
+          Contact
+        </a>
+        <a href="contact.html" class="mx-4 mt-2 inline-flex justify-center items-center gap-2 px-5 py-3 bg-gold text-black font-semibold rounded-lg hover:bg-gold-dark hover:text-white">
+          <i data-feather="calendar" class="h-5 w-5 shrink-0" aria-hidden="true"></i>
           Book Now
         </a>
       </div>
