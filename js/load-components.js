@@ -64,10 +64,25 @@
     }
   }
 
+  /** Tailwind Play CDN may need a nudge after injecting partial HTML. */
+  function notifyTailwindDomUpdated() {
+    window.requestAnimationFrame(function () {
+      try {
+        var tw = window.tailwind;
+        if (tw && typeof tw.refresh === 'function') {
+          tw.refresh();
+        }
+      } catch (e) {}
+    });
+  }
+
   if (headerPlaceholder) {
     fetch(headerPath)
       .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
-      .then(function (html) { inject(headerPlaceholder, html); })
+      .then(function (html) {
+        inject(headerPlaceholder, html);
+        notifyTailwindDomUpdated();
+      })
       .catch(function () {
         headerPlaceholder.innerHTML = '<p class="p-4 text-center text-stone-500">Header could not be loaded.</p>';
       });
@@ -79,9 +94,21 @@
       .then(function (html) {
         inject(footerPlaceholder, html);
         setFooterYear();
+        notifyTailwindDomUpdated();
       })
       .catch(function () {
-        footerPlaceholder.innerHTML = '<p class="p-4 text-center text-stone-500">Footer could not be loaded.</p>';
+        footerPlaceholder.innerHTML =
+          '<footer id="site-footer" style="background:#0c1929;color:#c6b289;padding:2.5rem 1rem;font-family:system-ui,-apple-system,sans-serif;">' +
+          '<div style="max-width:80rem;margin:0 auto">' +
+          '<p style="font-weight:700;margin:0 0 0.5rem">Honzi Tours &amp; Travel</p>' +
+          '<p style="margin:0 0 0.75rem;font-size:0.9rem;line-height:1.5">Dubai, UAE</p>' +
+          '<p style="margin:0 0 0.75rem;font-size:0.9rem"><a href="mailto:info@honzitoursandtravel.com" style="color:#c6b289">info@honzitoursandtravel.com</a> · ' +
+          '<a href="tel:+971551352382" style="color:#c6b289">+971 55 135 2382</a></p>' +
+          '<p style="margin:0 0 1rem;font-size:0.9rem"><a href="index.html" style="color:#c1a061">Home</a> · <a href="contact.html" style="color:#c1a061">Contact</a></p>' +
+          '<p style="font-size:0.8rem;opacity:0.9;line-height:1.45">Use a local web server for the full site (e.g. run <code style="background:rgba(0,0,0,0.25);padding:0.15rem 0.35rem;border-radius:4px">npx serve .</code> in the project folder).</p>' +
+          '<p style="margin-top:1rem;font-size:0.8rem">© <time id="footer-year"></time> Honzi Tours &amp; Travel.</p>' +
+          '</div></footer>';
+        setFooterYear();
       });
   }
 

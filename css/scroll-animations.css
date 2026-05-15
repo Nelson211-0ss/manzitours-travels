@@ -1,3 +1,5 @@
+@import url("injected-components.css");
+
 /**
  * Scroll reveals — html.js-reveal on <html>, js/load-components.js runs the observer.
  * data-reveal: up | left | right | zoom | fade | soft | tilt | lift
