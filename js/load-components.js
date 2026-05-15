@@ -57,7 +57,11 @@
   function setFooterYear() {
     var yearEl = document.getElementById('footer-year');
     if (!yearEl) return;
-    yearEl.textContent = String(new Date().getFullYear());
+    var y = String(new Date().getFullYear());
+    yearEl.textContent = y;
+    if (yearEl.tagName === 'TIME') {
+      yearEl.setAttribute('datetime', y);
+    }
   }
 
   if (headerPlaceholder) {
